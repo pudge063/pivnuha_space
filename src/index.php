@@ -14,6 +14,7 @@
     echo "<br>";
     $mysqli = mysqli_connect('db', 'admin', '123', 'db_test');
     $result = $mysqli->query("SELECT * FROM test1 LIMIT 10");
+    echo "rows in table ";
     printf($result->num_rows);
     echo "<br>";
     echo "Ok!";
