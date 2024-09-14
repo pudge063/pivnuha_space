@@ -3,6 +3,7 @@ services:
   nginx:
     container_name: nginx
     image: nginx:latest
+    restart: always
     ports:
       - 88:80
     volumes:
@@ -11,6 +12,7 @@ services:
   db:
     container_name: db
     image: mysql:8
+    restart: always
     environment:
       - MYSQL_DATABASE=db_test
       - MYSQL_USER=admin
@@ -20,6 +22,7 @@ services:
       - 3306:3306
   php:
     container_name: php
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
@@ -29,6 +32,7 @@ services:
       - db
   phpmyadmin:
     container_name: phpmyadmin
+    restart: always
     image: phpmyadmin:latest
     ports:
       - 8081:80
