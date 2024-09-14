@@ -19,6 +19,9 @@
     echo "<br>";
     echo "Ok!";
     ?>
+    <a href="http://google.com">google</a>
+    <a href="http://gitlab.psuti.fun">Gitlab Local</a>
+    <a href="http://phpmyadmin.psuti.fun">phpmyadmin</a>
 </body>
 
 </html>
