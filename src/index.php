@@ -16,7 +16,7 @@
     if ($conn->connect_error) {
         die("Ошибка: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM test1 order by create_date limit 30";
+    $sql = "SELECT * FROM test1 order by -create_date limit 30";
     if ($result = $conn->query($sql)) {
         $rowsCount = $result->num_rows;
         echo "<p>Всего записей: $rowsCount</p>";
