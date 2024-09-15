@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/src/index.php";
+require_once __DIR__ . "../src/index.php";
 
 if (isset($_POST['name']) && isset($_POST['beer'])) {
     // $conn = mysqli_connect("db", "admin", "123", "db_test");
