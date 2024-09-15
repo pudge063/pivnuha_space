@@ -31,7 +31,7 @@
         ?>
 
         <?php
-
+        /*
         $conn = new mysqli($DB_HOST, $MYSQL_USER, $MYSQL_PASSWORD, $DB_NAME);
         if ($conn->connect_error) {
             die("Ошибка: " . $conn->connect_error);
@@ -64,8 +64,9 @@
         }
 
         $conn->close();
-
+        */
         ?>
+    
     </div>
     <div class="container">
         <h2>Отметиться</h2>
