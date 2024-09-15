@@ -22,13 +22,13 @@
             </div>
         </header>
         <?php
-        echo getenv('MYSQL_USER');
+        define($MYSQL_USER, getenv('MYSQL_USER'));
         ?>
 
 
         <?php
 
-        $conn = new mysqli("pivnuha.space", "admin", "123", "db_test");
+        $conn = new mysqli("pivnuha.space", $MYSQL_USER, "123", "db_test");
         if ($conn->connect_error) {
             die("Ошибка: " . $conn->connect_error);
         }
