@@ -23,6 +23,8 @@ h2 {
     /* Центрирование контейнера */
     margin-bottom: 20px;
     padding: 20px;
+    padding-left: 0;
+    padding-right: 0;
     background-color: #fff;
     /* Фон контейнера */
     border-radius: 10px;
