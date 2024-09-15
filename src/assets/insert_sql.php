@@ -10,7 +10,7 @@ if (isset($_POST['name']) && isset($_POST['beer'])) {
     if (mysqli_connect_errno()) {
         echo "провал" . mysqli_connect_error();
     }
-    $query1 = "INSERT INTO `cat` VALUES ($name, $beer);";
+    $query1 = "INSERT INTO test1 VALUES ($name, $beer);";
     $result1 = mysqli_query($con, $query1);
 
     if ($result1 = 'true') {
