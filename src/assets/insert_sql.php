@@ -13,9 +13,11 @@ if (isset($_POST['name']) && isset($_POST['beer'])) {
     $query1 = "INSERT INTO test1 (name, beer) VALUES ($name, $beer);";
     $result1 = mysqli_query($con, $query1);
 
-    if ($result1 = 'true') {
-        echo "Информация занесена в базу данных";
-    } else {
-        echo "Информация не занесена в базу данных";
-    }
+    // if ($result1 = 'true') {
+    //     echo "Информация занесена в базу данных";
+    // } else {
+    //     echo "Информация не занесена в базу данных";
+    // }
 }
+
+header("Location: ../index.php");
