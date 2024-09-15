@@ -10,19 +10,6 @@
 <body>
     <h1>Example</h1>
     <?php
-    /*
-    echo "Test";
-    echo "<br>";
-    
-    $mysqli = mysqli_connect('db', 'admin', '123', 'db_test');
-    $result = $mysqli->query("SELECT * FROM test1 LIMIT 10");
-    echo "rows in table ";
-    printf($result->num_rows);
-    echo $result[0]["id"];
-    
-    echo "<br>";
-    echo "Ok!";
-    */
 
     $conn = new mysqli("db", "admin", "123", "db_test");
     if ($conn->connect_error) {
