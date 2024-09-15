@@ -28,7 +28,7 @@
 
         <?php
 
-        $conn = new mysqli("pivnuha.space", $MYSQL_USER, "123", "db_test");
+        $conn = new mysqli("pivnuha.space", getenv('MYSQL_USER'), "123", "db_test");
         if ($conn->connect_error) {
             die("Ошибка: " . $conn->connect_error);
         }
