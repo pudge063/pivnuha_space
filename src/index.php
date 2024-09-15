@@ -46,12 +46,6 @@
             $result->free();
         }
 
-        /*
-    else {
-        echo "Ошибка: " . $conn->error;
-    }
-    */
-
         $conn->close();
 
         ?>
