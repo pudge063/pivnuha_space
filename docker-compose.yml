@@ -15,9 +15,9 @@ services:
     restart: always
     environment:
       - MYSQL_DATABASE=db_test
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=123
-      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_USER=$MYSQL_USER
+      - MYSQL_PASSWORD=$MYSQL_PASSWORD
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
     ports:
       - 3306:3306
   php:
