@@ -8,6 +8,20 @@
 </head>
 
 <body>
+    <header>
+        <div class="header-line">
+            <div class="header-image">
+
+            </div>
+            <div class="header-link">
+                <a href="https://gitlab.pivnuha.space">Gitlab Local</a>
+            </div>
+            <div class="header-link">
+                <a href="https://admin.pivnuha.space">Gitlab Local</a>
+            </div>
+
+        </div>
+    </header>
     <h1>Example</h1>
     <?php
 
@@ -33,27 +47,6 @@
     }
     $conn->close();
 
-    ?>
-    <a href="http://google.com">google</a>
-    <a href="http://gitlab.psuti.fun">Gitlab Local</a>
-    <a href="http://phpmyadmin.psuti.fun">phpmyadmin</a>
-
-    <?php
-    echo '1';
-    echo '<br>';
-    $x = 1;
-    $y = 1;
-    if ($x++ == 1) {
-        print($x);
-    }
-    echo '<br>';
-    if (++$y == 2) {
-        print($x);
-    }
-    echo "<br>";
-    $a = array('123', '234', '345');
-    // print($a);
-    print($a[1]);
     ?>
 
 </body>
