@@ -27,6 +27,7 @@
         $MYSQL_PASSWORD = getenv('$MYSQL_PASSWORD');
         $DB_NAME = 'db_test';
         $DB_HOST = 'db';
+        echo $MYSQL_USER, $MYSQL_PASSWORD;
         ?>
 
         <?php
