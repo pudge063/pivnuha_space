@@ -21,6 +21,9 @@
                 <img src="/assets/static/beer.png" alt="beer">
             </div>
         </header>
+        <?php
+        echo getenv('MYSQL_USER');
+        ?>
 
 
         <?php
