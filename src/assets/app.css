@@ -1,15 +1,29 @@
 h1 {
     font: 1em sans-serif;
     color: #b42929;
+    text-align: center;
+    margin: 10px;
 }
 
-.index-table td tr {
-    border: 1px solid black;
+body {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, tr, th {
+    min-width: 20vh;
+    width: 200px;
+    height: 20px;
+    border: 2px solid blueviolet;
+    box-shadow: 1px 1px 1px blue;
 }
 
 .index-table {
     border: 2px solid blueviolet;
+    border-collapse: collapse;
     box-shadow: 2px 2px 20px blueviolet;
+    text-align: center;
 }
 
 form.form-example {

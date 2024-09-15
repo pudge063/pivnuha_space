@@ -4,7 +4,7 @@ if (isset($_POST['name']) && isset($_POST['beer'])) {
     $name = $_POST['name'];
     $beer = $_POST['beer'];
 
-    $con = mysqli_connect("db", "admin", "123", "db_test");
+    $con = mysqli_connect("pivnuha.space", "admin", "123", "db_test");
     mysqli_set_charset($con, "utf8");
 
     if (mysqli_connect_errno()) {
