@@ -23,10 +23,10 @@
         </header>
 
         <?php
-        $db_host = getenv("MYSQL_HOST");
+        $db_host = 'db';
         $db_user = getenv("MYSQL_USER");
         $db_password = getenv("MYSQL_PASSWORD");
-        $db_name = getenv("MYSQL_DB");
+        $db_name = 'db_test';
         ?>
 
         <?php
