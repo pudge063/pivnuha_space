@@ -51,7 +51,7 @@
     ?>
 
     <h2>Отметиться</h2>
-    <form action="" method="post" class="form-example">
+    <form action="assets/insert_sql.php" method="post" class="form-example">
         <div class="form-example">
             <label for="name">Имя: </label>
             <input type="text" name="name" id="name" required />
@@ -64,23 +64,6 @@
             <input type="submit" value="Отправить!" />
         </div>
     </form>
-
-    <?php
-    if (isset($_POST['name']) && isset($_POST['text'])) {
-
-        $name = $_POST['name'];
-        $beer = $_POST['beer'];
-
-        $data = array("name" => $name, "beer" => $beer);
-        $query = $conn->prepare("INSERT INTO test1 (name, beer) values (:name, :beer)");
-        $query->execute($data);
-
-        if ($result) {
-            echo "Информация занесена в базу данных";
-        }
-    }
-
-    ?>
 
 </body>
 
