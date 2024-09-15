@@ -3,68 +3,120 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+    font: bolder;
 }
 
 /* Заголовок */
-h1 {
+h1,
+h2 {
     font-size: 2em;
-    color: #b42929;
+    color: blueviolet;
     text-align: center;
     margin: 20px 0;
 }
 
 /* Основная обертка */
 .container {
-    max-width: 600px; /* Максимальная ширина для ПК */
-    margin: 0 auto; /* Центрирование контейнера */
+    max-width: 600px;
+    /* Максимальная ширина для ПК */
+    margin: 0 auto;
+    /* Центрирование контейнера */
+    margin-bottom: 20px;
     padding: 20px;
-    background-color: #fff; /* Фон контейнера */
-    border-radius: 8px; /* Закругленные углы */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #fff;
+    /* Фон контейнера */
+    border-radius: 10px;
+    /* Закругленные углы */
+    box-shadow: 2px 2px 20px blueviolet;
+    /* Тень */
 }
 
 /* Таблица */
 .index-table {
-    width: 100%; /* Занять полную ширину */
-    border-collapse: collapse; /* Убрать пробел между ячейками */
+    width: 100%;
+    border-collapse: collapse;
     margin-bottom: 20px;
+    box-shadow: 2px 2px 20px blueviolet;
 }
 
-td, th {
-    padding: 10px; /* Отступы в ячейках */
-    border: 2px solid blueviolet; /* Граница ячеек */
-    text-align: center; /* Центрирование текста */
+td,
+th {
+    padding: 10px;
+    border: 2px solid blueviolet;
+    text-align: center;
+    box-shadow: 2px 2px 3px blueviolet;
 }
 
 /* Формы */
 form.form-example {
-    display: flex; /* Использование flexbox для удобного выравнивания */
-    flex-direction: column; /* Вертикальное выравнивание элементов */
+    display: flex;
+    flex-direction: column;
 }
 
 .form-example div {
-    margin-bottom: 15px; /* Отступ между строками формы */
+    margin: 10px;
 }
 
-label {
-    margin-bottom: 5px; /* Отступ под ярлыком */
+/* Стили для ярлыков */
+.form-example label {
+    font-weight: bold;
+    /* Жирный шрифт */
+    margin-bottom: 5px;
+    /* Отступ под ярлыком */
+    display: block;
+    /* Отображение в виде блочного элемента */
 }
 
-input[type="text"], input[type="submit"] {
-    padding: 10px; /* Отступы в поле ввода */
-    border: 1px solid #ccc; /* Граница поля ввода */
-    border-radius: 4px; /* Закругленные углы */
-    width: 100%; /* Полная ширина для мобильных устройств */
-    box-sizing: border-box; /* Учет отступов и границ внутри ширины */
+/* Стили для полей ввода */
+input[type="text"] {
+    padding: 10px;
+    /* Отступы внутри поля ввода */
+    border: 1px solid blueviolet;
+    /* Светлая граница */
+    border-radius: 4px;
+    /* Закругленные углы */
+    width: 100%;
+    /* Полная ширина поля ввода */
+    box-sizing: border-box;
+    /* Учет отступов и границ */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    /* Плавные эффекты */
+}
+
+/* Эффект на фокус для полей ввода */
+input[type="text"]:focus {
+    border-color: #b42929;
+    /* Цвет границы при фокусе */
+    box-shadow: 0 0 5px rgba(180, 41, 41, 0.5);
+    /* Тень при фокусе */
+}
+
+input[type="text"],
+input[type="submit"] {
+    padding: 10px;
+    /* Отступы в поле ввода */
+    border: 1px solid #ccc;
+    /* Граница поля ввода */
+    border-radius: 6px;
+    /* Закругленные углы */
+    width: 100%;
+    /* Полная ширина для мобильных устройств */
+    box-sizing: border-box;
+    /* Учет отступов и границ внутри ширины */
 }
 
 input[type="submit"] {
-    background-color: #b42929; /* Цвет кнопки */
-    color: white; /* Цвет текста кнопки */
-    border: none; /* Убрать границу кнопки */
-    cursor: pointer; /* Указатель при наведении */
+    background-color: blueviolet;
+    /* Цвет кнопки */
+    color: white;
+    /* Цвет текста кнопки */
+    border: none;
+    /* Убрать границу кнопки */
+    cursor: pointer;
+    /* Указатель при наведении */
 }
 
 input[type="submit"]:hover {
-    background-color: #a02222; /* Цвет кнопки при наведении */
+    background-color: blue;
+    /* Цвет кнопки при наведении */
 }

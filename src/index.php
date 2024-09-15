@@ -22,7 +22,7 @@
         $sql = "SELECT * FROM test1 order by -create_date limit 30";
         if ($result = $conn->query($sql)) {
             $rowsCount = $result->num_rows;
-            echo "<p>Всего записей: $rowsCount</p>";
+            echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
             echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
             foreach ($result as $row) {
                 echo "<tr>";
@@ -55,7 +55,8 @@
         $conn->close();
 
         ?>
-
+    </div>
+    <div class="container">
         <h2>Отметиться</h2>
         <form action="assets/insert_sql.php" method="post" class="form-example">
             <div>
