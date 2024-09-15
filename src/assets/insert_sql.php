@@ -1,7 +1,9 @@
 <?php
 
+require_once __DIR__ . "../index.php";
+
 if (isset($_POST['name']) && isset($_POST['beer'])) {
-    $conn = mysqli_connect("db", "admin", "123", "db_test");
+    // $conn = mysqli_connect("db", "admin", "123", "db_test");
     mysqli_set_charset($conn, "utf8");
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);

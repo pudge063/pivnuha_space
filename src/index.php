@@ -21,19 +21,17 @@
                 <img src="/assets/static/beer.png" alt="beer">
             </div>
         </header>
+
         <?php
-        $db_user = getenv("MYSQL_USER");
-        if (empty($db_user)) {
-            echo "Переменная окружения MYSQL_USER не установлена.";
-        } else {
-            echo "Переменная окружения MYSQL_USER: $db_user";
-        }
+        define($MYSQL_USER, getenv('$MYSQL_USER'));
+        define($MYSQL_PASSWORD, getenv('$MYSQL_PASSWORD'));
+        define($DB_NAME, 'db_test');
+        define($DB_HOST, 'db')
         ?>
 
-
         <?php
 
-        $conn = new mysqli("db", "admin", "123", "db_test");
+        $conn = new mysqli($DB_HOST, $MYSQL_USER, $MYSQL_PASSWORD, $DB_NAME);
         if ($conn->connect_error) {
             die("Ошибка: " . $conn->connect_error);
         }
