@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/model/connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,18 +27,18 @@
         </header>
 
         <?php
-        $db_host = 'db';
-        $db_user = getenv("MYSQL_USER");
-        $db_password = getenv("MYSQL_PASSWORD");
-        $db_name = 'db_test';
+        // $db_host = 'db';
+        // $db_user = getenv("MYSQL_USER");
+        // $db_password = getenv("MYSQL_PASSWORD");
+        // $db_name = 'db_test';
         ?>
 
         <?php
         
-        $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
-        if ($conn->connect_error) {
-            die("Ошибка: " . $conn->connect_error);
-        }
+        // $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+        // if ($conn->connect_error) {
+        //     die("Ошибка: " . $conn->connect_error);
+        // }
         $sql = "SELECT * FROM test1 order by -create_date limit 30";
         if ($result = $conn->query($sql)) {
             $rowsCount = $result->num_rows;
