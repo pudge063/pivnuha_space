@@ -22,13 +22,18 @@
             </div>
         </header>
         <?php
-        // define($MYSQL_USER, getenv('MYSQL_USER'));
+        $db_user = getenv("MYSQL_USER");
+        if (empty($db_user)) {
+            echo "Переменная окружения MYSQL_USER не установлена.";
+        } else {
+            echo "Переменная окружения MYSQL_USER: $db_user";
+        }
         ?>
 
 
         <?php
 
-        $conn = new mysqli("pivnuha.space", getenv('$MYSQL_USER'), "123", "db_test");
+        $conn = new mysqli("db", "admin", "123", "db_test");
         if ($conn->connect_error) {
             die("Ошибка: " . $conn->connect_error);
         }
