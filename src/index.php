@@ -62,7 +62,7 @@
             $result->free();
         }
 
-        $conn->close();
+        // $conn->close();
         
         ?>
     
