@@ -10,9 +10,19 @@
 
 <body>
     <div class="container">
+        <header>
+            <div class="header-item">
+                <img src="/assets/static/beer.png" alt="beer">
+            </div>
+            <div class="header-item">
+                <h1>Pivnuha Space</h1>
+            </div>
+            <div class="header-item">
+                <img src="/assets/static/beer.png" alt="beer">
+            </div>
+        </header>
 
 
-        <h1>Pivnuha Space</h1>
         <?php
 
         $conn = new mysqli("pivnuha.space", "admin", "123", "db_test");

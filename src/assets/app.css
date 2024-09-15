@@ -6,6 +6,20 @@ body {
     font: bolder;
 }
 
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.header-item {
+    margin-left: 10px;
+    margin-right: 10px;
+    img {
+        max-width: 100px;
+    }
+}
+
 /* Заголовок */
 h1,
 h2 {
