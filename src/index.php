@@ -26,7 +26,7 @@
     <h1>Example</h1>
     <?php
 
-    $conn = new mysqli("db", $MYSQL_USER, $MYSQL_PASSWORD, "db_test");
+    $conn = new mysqli("db", "admin", "123", "db_test");
     if ($conn->connect_error) {
         die("Ошибка: " . $conn->connect_error);
     }
