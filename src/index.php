@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/app.css">
     <title>Example</title>
 </head>
 
@@ -32,8 +33,8 @@
     $sql = "SELECT * FROM test1";
     if ($result = $conn->query($sql)) {
         $rowsCount = $result->num_rows;
-        echo "<p>Получено объектов: $rowsCount</p>";
-        echo "<table><tr><th>Id</th><th>Имя</th></tr>";
+        echo "<p>Всего записей: $rowsCount</p>";
+        echo "<table class='index-table'><tr><th>Id</th><th>Имя</th></tr>";
         foreach ($result as $row) {
             echo "<tr>";
             echo "<td>" . $row["id"] . "</td>";

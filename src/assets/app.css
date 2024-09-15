@@ -2,3 +2,12 @@ h1 {
     font: 1em sans-serif;
     color: #b42929;
 }
+
+.index-table td tr {
+    border: 1px solid black;
+}
+
+.index-table {
+    border: 2px solid blueviolet;
+    box-shadow: 2px 2px 20px blueviolet;
+}
