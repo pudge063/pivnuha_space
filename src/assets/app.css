@@ -15,9 +15,10 @@ header {
 .header-item {
     margin-left: 10px;
     margin-right: 10px;
-    img {
-        max-width: 10vh;
-    }
+}
+
+.header-item img {
+    max-width: 50px;
 }
 
 /* Заголовок */
