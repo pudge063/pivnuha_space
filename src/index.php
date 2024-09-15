@@ -23,8 +23,8 @@
         </header>
 
         <?php
-        $MYSQL_USER = getenv('$MYSQL_USER');
-        $MYSQL_PASSWORD = getenv('$MYSQL_PASSWORD');
+        $mysql_user = getenv('$MYSQL_USER');
+        $mysql_password = getenv('$MYSQL_PASSWORD');
         $DB_NAME = 'db_test';
         $DB_HOST = 'db';
         echo $MYSQL_USER, $MYSQL_PASSWORD;
