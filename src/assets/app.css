@@ -1,45 +1,70 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Заголовок */
 h1 {
-    font: 1em sans-serif;
+    font-size: 2em;
     color: #b42929;
     text-align: center;
-    margin: 10px;
+    margin: 20px 0;
 }
 
-body {
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
+/* Основная обертка */
+.container {
+    max-width: 600px; /* Максимальная ширина для ПК */
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 20px;
+    background-color: #fff; /* Фон контейнера */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
 }
 
-td, tr, th {
-    min-width: 20vh;
-    width: 200px;
-    height: 20px;
-    border: 2px solid blueviolet;
-    box-shadow: 1px 1px 1px blue;
-}
-
+/* Таблица */
 .index-table {
-    border: 2px solid blueviolet;
-    border-collapse: collapse;
-    box-shadow: 2px 2px 20px blueviolet;
-    text-align: center;
+    width: 100%; /* Занять полную ширину */
+    border-collapse: collapse; /* Убрать пробел между ячейками */
+    margin-bottom: 20px;
 }
 
+td, th {
+    padding: 10px; /* Отступы в ячейках */
+    border: 2px solid blueviolet; /* Граница ячеек */
+    text-align: center; /* Центрирование текста */
+}
+
+/* Формы */
 form.form-example {
-    display: table;
-  }
-  
-  div.form-example {
-    display: table-row;
-  }
-  
-  label,
-  input {
-    display: table-cell;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    padding-right: 10px;
-  }
+    display: flex; /* Использование flexbox для удобного выравнивания */
+    flex-direction: column; /* Вертикальное выравнивание элементов */
+}
+
+.form-example div {
+    margin-bottom: 15px; /* Отступ между строками формы */
+}
+
+label {
+    margin-bottom: 5px; /* Отступ под ярлыком */
+}
+
+input[type="text"], input[type="submit"] {
+    padding: 10px; /* Отступы в поле ввода */
+    border: 1px solid #ccc; /* Граница поля ввода */
+    border-radius: 4px; /* Закругленные углы */
+    width: 100%; /* Полная ширина для мобильных устройств */
+    box-sizing: border-box; /* Учет отступов и границ внутри ширины */
+}
+
+input[type="submit"] {
+    background-color: #b42929; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убрать границу кнопки */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+input[type="submit"]:hover {
+    background-color: #a02222; /* Цвет кнопки при наведении */
+}
