@@ -30,6 +30,8 @@ services:
       - './src:/var/www/html'
     depends_on:
       - db
+    environment:
+      - MYSQL_USER=$MYSQL_USER
   phpmyadmin:
     container_name: phpmyadmin
     restart: always
