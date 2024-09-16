@@ -87,7 +87,7 @@ require_once __DIR__ . '/model/connect.php';
             </div>
             <?php
             // echo $_SERVER['REMOTE_ADDR'];
-            echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
+            // echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
             // echo "<br>" . $ip;
             ?>
         </form>
