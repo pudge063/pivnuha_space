@@ -85,6 +85,10 @@ require_once __DIR__ . '/model/connect.php';
             <div>
                 <input type="submit" value="Отправить"/>
             </div>
+            <?php
+            echo $_SERVER['REMOTE_ADDR'];
+            echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
+            ?>
         </form>
     </div>
 </body>
