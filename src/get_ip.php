@@ -14,3 +14,5 @@ function getIp() {
     }
   }
 }
+
+header('Location: ../');
