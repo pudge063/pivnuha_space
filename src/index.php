@@ -71,16 +71,20 @@ require_once __DIR__ . '/model/crud.php'
                 <label for="beer">Пиво: </label>
                 <input type="text" name="beer" id="beer" required maxlength="10" />
             </div>
-            <div>
+            <!-- <div>
                 <input type="checkbox" id="politics" onclick="check();" value="" autocomplete="off" />
                 Даю согласие на обработку данных
-            </div>
+            </div> -->
             <div>
-                <input type="submit" name="submit" value="Отправить" disabled="" />
+                <input type="submit" name="submit" value="Отправить"
+                    class="g-recaptcha"
+                    data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3"
+                    data-callback='onSubmit'
+                    data-action='submit' />
             </div>
-
         </form>
-        <script>
+
+        <!-- <script>
             function check() {
                 var submit = document.getElementsByName('submit')[0];
                 if (document.getElementById('politics').checked)
@@ -88,7 +92,7 @@ require_once __DIR__ . '/model/crud.php'
                 else
                     submit.disabled = 'disabled';
             }
-        </script>
+        </script> -->
     </div>
 
     <div class="container" hidden>
