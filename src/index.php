@@ -84,7 +84,7 @@ require_once __DIR__ . '/model/connect.php';
             </div>
             <div>
                 <input type="checkbox" id="politics" onclick="check();" value="" autocomplete="off" />
-                Нажимая на кнопку "Отправить заказ", я даю <a href="ссылка на страницу согласия">согласие на обработку персональных данных.</a>
+                Даю согласие на обработку данных
             </div>
             <div>
                 <input type="submit" name="submit" value="Отправить" disabled=""/>
