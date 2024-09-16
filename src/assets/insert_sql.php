@@ -23,5 +23,5 @@ if (isset($_POST['name']) && isset($_POST['beer']) && isset($_POST['g-recaptcha-
     mysqli_close($conn);
 }
 
-header("Location: ../");
+// header("Location: ../");
 exit();

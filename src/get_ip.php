@@ -15,4 +15,4 @@ function getIp() {
   }
 }
 
-// header('Location: ../');
+header('Location: ../');
