@@ -79,7 +79,7 @@ form.form-example {
 }
 
 input[type="text"] {
-    padding: 10px;
+    padding: 0px;
     border: 1px solid blueviolet;
     border-radius: 4px;
     max-width: 100%;
