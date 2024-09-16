@@ -15,18 +15,18 @@ require_once __DIR__ . '/model/rc4.php'
 </head>
 
 <body>
+    <header class="container">
+        <div class="header-item">
+            <img src="/assets/static/beer.png" alt="beer">
+        </div>
+        <div class="header-item">
+            <h1>Pivnuha Space</h1>
+        </div>
+        <div class="header-item">
+            <img src="/assets/static/beer.png" alt="beer">
+        </div>
+    </header>
     <div class="container">
-        <header>
-            <div class="header-item">
-                <img src="/assets/static/beer.png" alt="beer">
-            </div>
-            <div class="header-item">
-                <h1>Pivnuha Space</h1>
-            </div>
-            <div class="header-item">
-                <img src="/assets/static/beer.png" alt="beer">
-            </div>
-        </header>
 
         <?php
         // $db_host = 'db';
