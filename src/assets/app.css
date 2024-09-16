@@ -61,7 +61,7 @@ form.form-example {
     flex-direction: column;
     margin-right: auto;
     margin-left: auto;
-    max-width: 310px;
+    max-width: 400px;
     justify-content: center;
     border: 2px solid blueviolet;
     border-radius: 8px;
