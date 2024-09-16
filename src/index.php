@@ -1,5 +1,4 @@
 <?php
-// require_once __DIR__ . '/model/connect.php';
 // require_once __DIR__ . '/model/rc4.php'
 require_once __DIR__ . '/model/crud.php'
 ?>
@@ -30,7 +29,6 @@ require_once __DIR__ . '/model/crud.php'
     <div class="container">
 
         <?php
-        // $sql = "SELECT * FROM test1 order by -create_date limit 30";
         if ($result = read_table($conn)) {
             $rowsCount = $result->num_rows;
             echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
@@ -57,7 +55,7 @@ require_once __DIR__ . '/model/crud.php'
             $result->free();
         }
 
-        // $conn->close();
+        $conn->close();
 
         ?>
 
@@ -81,11 +79,6 @@ require_once __DIR__ . '/model/crud.php'
                 <input type="submit" name="submit" value="Отправить" disabled="" />
             </div>
 
-            <?php
-            // echo $_SERVER['REMOTE_ADDR'];
-            // echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
-            // echo "<br>" . $ip;
-            ?>
         </form>
         <script>
             function check() {
@@ -98,7 +91,7 @@ require_once __DIR__ . '/model/crud.php'
         </script>
     </div>
 
-    <div class="container">
+    <div class="container" hidden>
         <?php
         // $key = '0123456789abcdef';
         // $data = 'Hello World!';

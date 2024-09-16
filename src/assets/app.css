@@ -21,7 +21,6 @@ header {
     max-width: 50px;
 }
 
-/* Заголовок */
 h1,
 h2 {
     font-size: 2em;
@@ -30,7 +29,6 @@ h2 {
     margin: 20px 0;
 }
 
-/* Основная обертка */
 .container {
     max-width: 700px;
     margin: 0 auto;
@@ -43,7 +41,6 @@ h2 {
     box-shadow: 2px 2px 20px blueviolet;
 }
 
-/* Таблица */
 .index-table {
     width: 100%;
     border-collapse: collapse;
@@ -59,62 +56,49 @@ th {
     box-shadow: 2px 2px 3px blueviolet;
 }
 
-/* Формы */
 form.form-example {
     display: flex;
     flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
+    justify-content: center;
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px blueviolet;
 }
 
 .form-example div {
     margin: 10px;
 }
 
-/* Стили для ярлыков */
 .form-example label {
     font-weight: bold;
-    /* Жирный шрифт */
     margin-bottom: 5px;
-    /* Отступ под ярлыком */
     display: block;
-    /* Отображение в виде блочного элемента */
 }
 
-/* Стили для полей ввода */
 input[type="text"] {
     padding: 10px;
-    /* Отступы внутри поля ввода */
     border: 1px solid blueviolet;
-    /* Светлая граница */
     border-radius: 4px;
-    /* Закругленные углы */
-    width: 100%;
-    /* Полная ширина поля ввода */
+    max-width: 100%;
     box-sizing: border-box;
-    /* Учет отступов и границ */
     transition: border-color 0.3s, box-shadow 0.3s;
-    /* Плавные эффекты */
 }
 
-/* Эффект на фокус для полей ввода */
 input[type="text"]:focus {
     border-color: #b42929;
-    /* Цвет границы при фокусе */
     box-shadow: 0 0 5px rgba(180, 41, 41, 0.5);
-    /* Тень при фокусе */
 }
 
 input[type="text"],
 input[type="submit"] {
     padding: 10px;
-    /* Отступы в поле ввода */
     border: 1px solid #ccc;
-    /* Граница поля ввода */
     border-radius: 6px;
-    /* Закругленные углы */
     width: 100%;
-    /* Полная ширина для мобильных устройств */
     box-sizing: border-box;
-    /* Учет отступов и границ внутри ширины */
 }
 
 input[type="submit"] {
