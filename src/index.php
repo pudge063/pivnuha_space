@@ -78,7 +78,9 @@ require_once __DIR__ . '/model/crud.php';
                 <label for="beer">Пиво: </label>
                 <input type="text" name="beer" id="beer" required maxlength="10" />
             </div>
-            <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
+            <div class="captcha-wrapper">
+                <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
+            </div>
             <div>
                 <input type="submit" name="submit" value="Отправить" />
             </div>

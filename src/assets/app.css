@@ -8,7 +8,7 @@ body {
 
 header {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -61,7 +61,7 @@ form.form-example {
     flex-direction: column;
     margin-right: auto;
     margin-left: auto;
-    max-width: 300px;
+    max-width: 310px;
     justify-content: center;
     border: 2px solid blueviolet;
     border-radius: 8px;
@@ -106,6 +106,7 @@ input[type="submit"] {
     color: white;
     border: none;
     cursor: pointer;
+    min-height: 40px;
 }
 
 input[type="submit"]:hover {
@@ -115,3 +116,25 @@ input[type="submit"]:hover {
 input[type="submit"]:disabled {
     background-color: #b42929;
 }
+
+.captcha-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto; /* Центрирует обертку */
+    max-width: 100%; /* Убедитесь, что не превышает ширину родителя */
+}
+
+
+/* .g-recaptcha,
+.g-recaptcha div {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.g-recaptcha iframe,
+body>div[style]:last-of-type {
+    transform: scale(0.75);
+    transform-origin: left top;
+} */
