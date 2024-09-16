@@ -132,3 +132,7 @@ input[type="submit"]:hover {
     background-color: blue;
     /* Цвет кнопки при наведении */
 }
+
+input[type="submit"]:disabled {
+    background-color: #b42929;
+}
