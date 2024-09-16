@@ -77,8 +77,7 @@ require_once __DIR__ . '/model/crud.php'
                 Даю согласие на обработку данных
             </div> -->
             <div>
-                <div class="g-recaptcha" data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3" style="margin-bottom:1em" ;></div>
-
+                <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
                 <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
