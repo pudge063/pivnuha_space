@@ -76,11 +76,11 @@ require_once __DIR__ . '/model/connect.php';
         <form action="assets/insert_sql.php" method="post" class="form-example">
             <div>
                 <label for="name">Имя: </label>
-                <input type="text" name="name" id="name" required />
+                <input type="text" name="name" id="name" required maxlength="20"/>
             </div>
             <div>
                 <label for="beer">Пиво: </label>
-                <input type="text" name="beer" id="beer" required />
+                <input type="text" name="beer" id="beer" required maxlength="30"/>
             </div>
             <div>
                 <input type="submit" value="Отправить"/>
