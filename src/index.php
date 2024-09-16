@@ -87,7 +87,7 @@ require_once __DIR__ . '/model/connect.php';
                 Нажимая на кнопку "Отправить заказ", я даю <a href="ссылка на страницу согласия">согласие на обработку персональных данных.</a>
             </div>
             <div>
-                <input type="submit" value="Отправить" />
+                <input type="submit" name="submit" value="Отправить" disabled=""/>
             </div>
 
             <?php
