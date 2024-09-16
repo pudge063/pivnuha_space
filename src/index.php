@@ -78,6 +78,8 @@ require_once __DIR__ . '/model/crud.php'
             </div> -->
             <div>
                 <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
+            </div>
+            <div>
                 <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
