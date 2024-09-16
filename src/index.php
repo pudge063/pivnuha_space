@@ -48,7 +48,7 @@ require_once __DIR__ . '/model/connect.php';
                                 echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["beer"] . "</td>";
-                echo "<td>" . date_parse_from_format("j.n.Y H:iP", $row['create_date']) . "</td>";
+                echo "<td>" . $row['create_date'] . "</td>";
                 echo "</tr>";
             }
 
