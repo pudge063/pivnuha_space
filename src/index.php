@@ -12,7 +12,6 @@ require_once __DIR__ . '/model/crud.php'
     <link rel="stylesheet" href="assets/app.css">
     <title>Pivnuha Space</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -72,10 +71,7 @@ require_once __DIR__ . '/model/crud.php'
                 <label for="beer">Пиво: </label>
                 <input type="text" name="beer" id="beer" required maxlength="10" />
             </div>
-            <!-- <div>
-                <input type="checkbox" id="politics" onclick="check();" value="" autocomplete="off" />
-                Даю согласие на обработку данных
-            </div> -->
+ 
             <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
             <div>
                 <input type="submit" name="submit" value="Отправить" />
@@ -85,22 +81,7 @@ require_once __DIR__ . '/model/crud.php'
             async defer>
         </script>
 
-        <!-- <script>
-            function check() {
-                var submit = document.getElementsByName('submit')[0];
-                if (document.getElementById('politics').checked)
-                    submit.disabled = '';
-                else
-                    submit.disabled = 'disabled';
-            }
-        </script> -->
     </div>
-
-    <!-- <script>
-        function onSubmit(token) {
-            document.getElementById("form-example").submit();
-        }
-    </script> -->
 
     <div class="container" hidden>
         <?php
