@@ -34,7 +34,7 @@ require_once __DIR__ . '/model/connect.php';
         ?>
 
         <?php
-        
+
         // $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
         // if ($conn->connect_error) {
         //     die("Ошибка: " . $conn->connect_error);
@@ -45,7 +45,7 @@ require_once __DIR__ . '/model/connect.php';
             echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
             echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
             foreach ($result as $row) {
-                                echo "<tr>";
+                echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["beer"] . "</td>";
                 echo "<td>" . $row['create_date'] . "</td>";
@@ -67,24 +67,39 @@ require_once __DIR__ . '/model/connect.php';
         }
 
         // $conn->close();
-        
+
         ?>
-    
+
     </div>
     <div class="container">
         <h2>Отметиться</h2>
         <form action="assets/insert_sql.php" method="post" class="form-example">
             <div>
                 <label for="name">Имя: </label>
-                <input type="text" name="name" id="name" required maxlength="10"/>
+                <input type="text" name="name" id="name" required maxlength="10" />
             </div>
             <div>
                 <label for="beer">Пиво: </label>
-                <input type="text" name="beer" id="beer" required maxlength="10"/>
+                <input type="text" name="beer" id="beer" required maxlength="10" />
             </div>
             <div>
-                <input type="submit" value="Отправить"/>
+                <input type="checkbox" id="politics" onclick="check();" value="" autocomplete="off" />
+                Нажимая на кнопку "Отправить заказ", я даю <a href="ссылка на страницу согласия">согласие на обработку персональных данных.</a>
             </div>
+            <div>
+                <input type="submit" value="Отправить" />
+            </div>
+
+            <script>
+                function check() {
+                    var submit = document.getElementsByName('submit')[0];
+                    if (document.getElementById('politics').checked)
+                        submit.disabled = '';
+                    else
+                        submit.disabled = 'disabled';
+                }
+            </script>
+
             <?php
             // echo $_SERVER['REMOTE_ADDR'];
             // echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
