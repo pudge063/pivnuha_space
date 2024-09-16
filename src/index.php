@@ -112,11 +112,14 @@ require_once __DIR__ . '/model/rc4.php'
         <?php
         $key = "0123456789abcdef";
         $plaintext = "Hello World!";
-        $ciphertext = rc4( $key, $plaintext );
-        $decrypted = rc4( $key, $ciphertext );
-        echo $decrypted . " - " . $plaintext . "\n";
+        $res = rc4Decrypt($key, $plaintext);
+        echo $res;
         ?>
     </div>
+
+    <script>
+        
+    </script>
 </body>
 
 </html>
