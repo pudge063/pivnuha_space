@@ -88,7 +88,7 @@ require_once __DIR__ . '/model/rc4.php'
                 Даю согласие на обработку данных
             </div>
             <div>
-                <input type="submit" name="submit" value="Отправить" disabled=""/>
+                <input type="submit" name="submit" value="Отправить" disabled="" />
             </div>
 
             <?php
@@ -113,12 +113,19 @@ require_once __DIR__ . '/model/rc4.php'
         $key = "0123456789abcdef";
         $plaintext = "Hello World!";
         $res = rc4Decrypt($key, $plaintext);
-        echo $res;
+
+        $jsoned = json_encode($data);
+        $encryptedText = rc4Decrypt("test", $jsoned);
+        $base64Encoded = base64_encode($encryptedText);
+
+        $interface->send($base64Encoded);
+        echo $$encryptedText;
+        echo $base64Encoded;
         ?>
     </div>
 
     <script>
-        
+
     </script>
 </body>
 

@@ -29,8 +29,3 @@ function rc4Decrypt($key, $cipher)
     return $plaintext;
 }
 
-$jsoned = json_encode($data);
-$encryptedText = rc4Decrypt("test", $jsoned);
-$base64Encoded = base64_encode($encryptedText);
-
-$interface->send($base64Encoded);
