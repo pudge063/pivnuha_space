@@ -114,6 +114,7 @@ require_once __DIR__ . '/model/rc4.php'
         $data = 'Hello World!';
         $res = rc4($key, $data);
         echo $res;
+        printf(rc4($key, $res));
         ?>
     </div>
 </body>
