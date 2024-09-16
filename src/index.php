@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/model/connect.php';
-require_once __DIR__ . '/get_ip.php'
 ?>
 
 <!DOCTYPE html>
