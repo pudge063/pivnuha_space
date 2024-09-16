@@ -26,5 +26,5 @@ if (isset($_POST['name']) && isset($_POST['beer'])) {
     mysqli_close($conn);
 }
 
-header("Location: ../");
+// header("Location: ../");
 exit();
