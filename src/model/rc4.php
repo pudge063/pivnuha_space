@@ -1,31 +1,27 @@
 <?php
-function rc4Decrypt($key, $cipher)
+function rc4($key, $str)
 {
-    // RC4 decryption algorithm
-    $S = range(0, 255);
-    $j = 0;
-
+    $s = array();
     for ($i = 0; $i < 256; $i++) {
-        $j = ($j + $S[$i] + ord($key[$i % strlen($key)])) % 256;
-        // Swap values of $S[$i] and $S[$j]
-        [$S[$i], $S[$j]] = [$S[$j], $S[$i]];
+        $s[$i] = $i;
     }
-
+    $j = 0;
+    for ($i = 0; $i < 256; $i++) {
+        $j = ($j + $s[$i] + ord($key[$i % strlen($key)])) % 256;
+        $x = $s[$i];
+        $s[$i] = $s[$j];
+        $s[$j] = $x;
+    }
     $i = 0;
     $j = 0;
-    $plaintext = '';
-
-    for ($k = 0; $k < strlen($cipher); $k++) {
+    $res = '';
+    for ($y = 0; $y < strlen($str); $y++) {
         $i = ($i + 1) % 256;
-        $j = ($j + $S[$i]) % 256;
-        // Swap values of $S[$i] and $S[$j]
-        [$S[$i], $S[$j]] = [$S[$j], $S[$i]];
-
-        $keyIndex = $S[($S[$i] + $S[$j]) % 256];
-        $keystream = $keyIndex ^ ord($cipher[$k]);
-        $plaintext .= chr($keystream);
+        $j = ($j + $s[$i]) % 256;
+        $x = $s[$i];
+        $s[$i] = $s[$j];
+        $s[$j] = $x;
+        $res .= $str[$y] ^ chr($s[($s[$i] + $s[$j]) % 256]);
     }
-
-    return $plaintext;
+    return $res;
 }
-

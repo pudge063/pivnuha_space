@@ -111,22 +111,10 @@ require_once __DIR__ . '/model/rc4.php'
     <div class="container">
         <?php
         $key = "0123456789abcdef";
-        $plaintext = "Hello World!";
-        $res = rc4Decrypt($key, $plaintext);
-
-        $jsoned = json_encode($data);
-        $encryptedText = rc4Decrypt("test", $jsoned);
-        $base64Encoded = base64_encode($encryptedText);
-
-        $interface->send($base64Encoded);
-        echo $$encryptedText;
-        echo $base64Encoded;
+        $data = "Hello World!";
+        $res = rc4($key, $res);
         ?>
     </div>
-
-    <script>
-
-    </script>
 </body>
 
 </html>
