@@ -9,7 +9,7 @@ require_once __DIR__ . '/model/connect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/app.css">
-    <title>PIVNUHA SPACE</title>
+    <title>Pivnuha Space</title>
 </head>
 
 <body>
