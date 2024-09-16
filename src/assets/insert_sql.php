@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../model/connect.php';
-require_once __DIR__ . '/../get_ip.php';
+// require_once __DIR__ . '/../get_ip.php';
 
 if (isset($_POST['name']) && isset($_POST['beer']) &&isset($_POST['g-recaptcha-response'])) {
     // $conn = mysqli_connect("db", "admin", "123", "db_test");
@@ -9,7 +9,8 @@ if (isset($_POST['name']) && isset($_POST['beer']) &&isset($_POST['g-recaptcha-r
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $beer = mysqli_real_escape_string($conn, $_POST['beer']);
-    $ip = mysqli_real_escape_string($conn, getIp());
+    // $ip = mysqli_real_escape_string($conn, getIp());
+    $ip = 1;
     $user_agent = mysqli_real_escape_string($conn, $_SERVER['HTTP_USER_AGENT']);
 
     if (mysqli_connect_errno()) {
@@ -24,6 +25,7 @@ if (isset($_POST['name']) && isset($_POST['beer']) &&isset($_POST['g-recaptcha-r
     // } else {
     //     echo "Информация не занесена в базу данных";
     // }
+    echo $c;
     mysqli_close($conn);
 }
 
