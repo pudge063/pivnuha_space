@@ -62,7 +62,7 @@ require_once __DIR__ . '/model/crud.php'
     </div>
     <div class="container">
         <h2>Отметиться</h2>
-        <form action="assets/insert_sql.php" method="post" class="form-example">
+        <form action="assets/insert_sql.php" method="post" class="form-example" id="form-example">
             <div>
                 <label for="name">Имя: </label>
                 <input type="text" name="name" id="name" required maxlength="10" />
