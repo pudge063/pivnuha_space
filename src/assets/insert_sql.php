@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../model/connect.php';
 require_once __DIR__ . '/../get_ip.php';
 
-if (isset($_POST['name']) && isset($_POST['beer']) && isset($_POST['g-recaptcha-response'])) {
+if (isset($_POST['name']) && isset($_POST['beer']) && !empty($_POST['g-recaptcha-response'])) {
     // $conn = mysqli_connect("db", "admin", "123", "db_test");
     mysqli_set_charset($conn, "utf8");
 
