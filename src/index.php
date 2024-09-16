@@ -1,6 +1,7 @@
 <?php
-require_once __DIR__ . '/model/connect.php';
-require_once __DIR__ . '/model/rc4.php'
+// require_once __DIR__ . '/model/connect.php';
+// require_once __DIR__ . '/model/rc4.php'
+require_once __DIR__ . '/model/crud.php'
 ?>
 
 <!DOCTYPE html>
@@ -29,20 +30,8 @@ require_once __DIR__ . '/model/rc4.php'
     <div class="container">
 
         <?php
-        // $db_host = 'db';
-        // $db_user = getenv("MYSQL_USER");
-        // $db_password = getenv("MYSQL_PASSWORD");
-        // $db_name = 'db_test';
-        ?>
-
-        <?php
-
-        // $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
-        // if ($conn->connect_error) {
-        //     die("Ошибка: " . $conn->connect_error);
-        // }
-        $sql = "SELECT * FROM test1 order by -create_date limit 30";
-        if ($result = $conn->query($sql)) {
+        // $sql = "SELECT * FROM test1 order by -create_date limit 30";
+        if ($result = read_table($conn)) {
             $rowsCount = $result->num_rows;
             echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
             echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
@@ -111,12 +100,12 @@ require_once __DIR__ . '/model/rc4.php'
 
     <div class="container">
         <?php
-        $key = '0123456789abcdef';
-        $data = 'Hello World!';
-        $res = rc4($key, $data);
-        echo "initial text: " . $data . "<br>";
-        echo "decrypted by rc4: " . $res . "<br>;";
-        printf("encrypted by rc4: " . rc4($key, $res));
+        // $key = '0123456789abcdef';
+        // $data = 'Hello World!';
+        // $res = rc4($key, $data);
+        // echo "initial text: " . $data . "<br>";
+        // echo "decrypted by rc4: " . $res . "<br>;";
+        // printf("encrypted by rc4: " . rc4($key, $res));
         ?>
     </div>
 </body>
