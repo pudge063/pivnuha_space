@@ -97,14 +97,14 @@ require_once __DIR__ . '/model/connect.php';
             ?>
         </form>
         <script>
-                function check() {
-                    var submit = document.getElementsByName('submit')[0];
-                    if (document.getElementById('politics').checked)
-                        submit.disabled = '';
-                    else
-                        submit.disabled = 'disabled';
-                }
-            </script>
+            function check() {
+                var submit = document.getElementsByName('submit')[0];
+                if (document.getElementById('politics').checked)
+                    submit.disabled = '';
+                else
+                    submit.disabled = 'disabled';
+            }
+        </script>
     </div>
 </body>
 
