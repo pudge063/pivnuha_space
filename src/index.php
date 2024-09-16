@@ -113,6 +113,7 @@ require_once __DIR__ . '/model/rc4.php'
         $key = "0123456789abcdef";
         $data = "Hello World!";
         $res = rc4($key, $res);
+        echo $res;
         ?>
     </div>
 </body>
