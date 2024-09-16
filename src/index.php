@@ -90,7 +90,13 @@ require_once __DIR__ . '/model/connect.php';
                 <input type="submit" value="Отправить" />
             </div>
 
-            <script>
+            <?php
+            // echo $_SERVER['REMOTE_ADDR'];
+            // echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
+            // echo "<br>" . $ip;
+            ?>
+        </form>
+        <script>
                 function check() {
                     var submit = document.getElementsByName('submit')[0];
                     if (document.getElementById('politics').checked)
@@ -99,13 +105,6 @@ require_once __DIR__ . '/model/connect.php';
                         submit.disabled = 'disabled';
                 }
             </script>
-
-            <?php
-            // echo $_SERVER['REMOTE_ADDR'];
-            // echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
-            // echo "<br>" . $ip;
-            ?>
-        </form>
     </div>
 </body>
 
