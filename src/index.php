@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/model/connect.php';
+require_once __DIR__ . '/model/rc4.php'
 ?>
 
 <!DOCTYPE html>
@@ -105,6 +106,16 @@ require_once __DIR__ . '/model/connect.php';
                     submit.disabled = 'disabled';
             }
         </script>
+    </div>
+
+    <div class="container">
+        <?php
+        $key = "0123456789abcdef";
+        $plaintext = "Hello World!";
+        $ciphertext = rc4( $key, $plaintext );
+        $decrypted = rc4( $key, $ciphertext );
+        echo $decrypted . " - " . $plaintext . "\n";
+        ?>
     </div>
 </body>
 
