@@ -12,6 +12,7 @@ require_once __DIR__ . '/model/crud.php'
     <link rel="stylesheet" href="assets/app.css">
     <title>Pivnuha Space</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -93,13 +94,6 @@ require_once __DIR__ . '/model/crud.php'
 
             </div>
         </form>
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-
-        <script>
-            function onSubmit(token) {
-                document.getElementById("form-example").submit();
-            }
-        </script>
 
         <!-- <script>
             function check() {
@@ -112,6 +106,12 @@ require_once __DIR__ . '/model/crud.php'
         </script> -->
     </div>
 
+    <script>
+        function onSubmit(token) {
+            document.getElementById("form-example").submit();
+        }
+    </script>
+    
     <div class="container" hidden>
         <?php
         // $key = '0123456789abcdef';
