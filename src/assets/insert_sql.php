@@ -14,7 +14,7 @@ if (isset($_POST['name']) && isset($_POST['beer'])) {
     if (mysqli_connect_errno()) {
         echo "провал" . mysqli_connect_error();
     }
-    $query1 = "INSERT INTO test1 (name, beer, id_address) VALUES ('$name', '$beer', '$ip');";
+    $query1 = "INSERT INTO test1 (name, beer, ip_address) VALUES ('$name', '$beer', '$ip');";
     $result1 = mysqli_query($conn, $query1);
 
     // if ($result1 = 'true') {
