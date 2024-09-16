@@ -96,11 +96,11 @@ require_once __DIR__ . '/model/crud.php'
         </script> -->
     </div>
 
-    <script>
+    <!-- <script>
         function onSubmit(token) {
             document.getElementById("form-example").submit();
         }
-    </script>
+    </script> -->
 
     <div class="container" hidden>
         <?php

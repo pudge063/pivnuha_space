@@ -15,7 +15,8 @@ if (isset($_POST['name']) && isset($_POST['beer'])) {
     if (mysqli_connect_errno()) {
         echo "провал" . mysqli_connect_error();
     }
-    $query1 = "INSERT INTO test1 (name, beer, ip_address, user_agent) VALUES ('$name', '$beer', '$ip', '$user_agent');";
+    $c = $_POST['g-recaptcha-response'];
+    $query1 = "INSERT INTO test1 (name, beer, ip_address, user_agent) VALUES ('$c', '$beer', '$ip', '$user_agent');";
     $result1 = mysqli_query($conn, $query1);
 
     // if ($result1 = 'true') {
