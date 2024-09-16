@@ -87,9 +87,9 @@ require_once __DIR__ . '/get_ip.php'
                 <input type="submit" value="Отправить"/>
             </div>
             <?php
-            echo $_SERVER['REMOTE_ADDR'];
+            // echo $_SERVER['REMOTE_ADDR'];
             echo "<br>" . $_SERVER['HTTP_USER_AGENT'];
-            echo "<br>" . $ip;
+            // echo "<br>" . $ip;
             ?>
         </form>
     </div>

@@ -14,5 +14,3 @@ function getIp() {
     }
   }
 }
-
-$ip = getIp();
