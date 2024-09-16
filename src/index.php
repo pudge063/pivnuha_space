@@ -81,6 +81,14 @@ require_once __DIR__ . '/model/crud.php'
                     data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3"
                     data-callback='onSubmit'
                     data-action='submit' />
+                <button
+                    class="g-recaptcha"
+                    data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3"
+                    data-callback='onSubmit'
+                    data-action='submit'>
+                    Отправить
+                </button>
+
             </div>
         </form>
 
