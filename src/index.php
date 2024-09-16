@@ -77,21 +77,9 @@ require_once __DIR__ . '/model/crud.php'
                 Даю согласие на обработку данных
             </div> -->
             <div>
-                <input type="submit" name="submit" value="Отправить"
-                    class="g-recaptcha"
-                    data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3"
-                    data-callback='onSubmit'
-                    data-action='submit' />
+                <div class="g-recaptcha" data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3" style="margin-bottom:1em" ;></div>
 
-
-                <button
-                    class="g-recaptcha"
-                    data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3"
-                    data-callback='onSubmit'
-                    data-action='submit'>
-                    Отправить
-                </button>
-
+                <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
 
@@ -111,7 +99,7 @@ require_once __DIR__ . '/model/crud.php'
             document.getElementById("form-example").submit();
         }
     </script>
-    
+
     <div class="container" hidden>
         <?php
         // $key = '0123456789abcdef';
