@@ -83,7 +83,7 @@ require_once __DIR__ . '/model/connect.php';
                 <input type="text" name="beer" id="beer" required />
             </div>
             <div>
-                <input type="submit" value="Пивнуха закрыта!"/>
+                <input type="submit" value="Отправить"/>
             </div>
         </form>
     </div>
