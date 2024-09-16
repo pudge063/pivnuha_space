@@ -46,6 +46,13 @@ require_once __DIR__ . '/model/connect.php';
             echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
             foreach ($result as $row) {
                 $date = date_parse($row["create_date"]);
+                if ($date['hour'] < 10) {
+                    $date['hour'] = "0" + $date['hour'];
+                }
+                if ($date['minute'] < 10) {
+                    $date['minute'] = "0" + $date['minute'];
+                }
+                
                 $parsed_date = $date['hour'] . ":" . $date['minute'] . " " . $date['day'] . "." . $date['month'] . "." . $date['year'];
                 echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
