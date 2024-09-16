@@ -119,18 +119,13 @@ input[type="submit"] {
 
 input[type="submit"] {
     background-color: blueviolet;
-    /* Цвет кнопки */
     color: white;
-    /* Цвет текста кнопки */
     border: none;
-    /* Убрать границу кнопки */
     cursor: pointer;
-    /* Указатель при наведении */
 }
 
 input[type="submit"]:hover {
     background-color: blue;
-    /* Цвет кнопки при наведении */
 }
 
 input[type="submit"]:disabled {
