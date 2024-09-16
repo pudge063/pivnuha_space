@@ -1,6 +1,7 @@
 <?php
 // require_once __DIR__ . '/model/rc4.php'
-require_once __DIR__ . '/model/crud.php'
+require_once __DIR__ . '/model/crud.php';
+include_once __DIR__ . '/model/captcha.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,11 @@ require_once __DIR__ . '/model/crud.php'
     <title>Pivnuha Space</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("form-example").submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -73,7 +79,12 @@ require_once __DIR__ . '/model/crud.php'
                 <input type="text" name="beer" id="beer" required maxlength="10" />
             </div>
             <div>
-                <input type="submit" name="submit" value="Отправить" />
+                <!-- <input type="submit" name="submit" value="Отправить" /> -->
+                <button class="g-recaptcha"
+                    data-sitekey="6LdJ9kUqAAAAACwPRLF4m1lLVHJ7lC7m9OC4C5R3"
+                    data-callback='onSubmit'
+                    data-action='submit'>Submit
+                </button>
             </div>
         </form>
 
