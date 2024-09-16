@@ -69,7 +69,7 @@ form.form-example {
 }
 
 .form-example div {
-    margin: 10px;
+    margin: 0px;
 }
 
 .form-example label {
@@ -122,19 +122,6 @@ input[type="submit"]:disabled {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 0 auto; /* Центрирует обертку */
-    max-width: 100%; /* Убедитесь, что не превышает ширину родителя */
-}
-
-
-/* .g-recaptcha,
-.g-recaptcha div {
-    overflow: hidden;
+    margin: 0 auto;
     max-width: 100%;
 }
-
-.g-recaptcha iframe,
-body>div[style]:last-of-type {
-    transform: scale(0.75);
-    transform-origin: left top;
-} */
