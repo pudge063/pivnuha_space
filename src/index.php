@@ -11,7 +11,7 @@ require_once __DIR__ . '/model/crud.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/app.css">
-    <title>Pivnuha Space</title>
+    <title>Pivnuha Space!</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
