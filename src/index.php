@@ -12,6 +12,7 @@ require_once __DIR__ . '/model/crud.php'
     <link rel="stylesheet" href="assets/app.css">
     <title>Pivnuha Space</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -71,15 +72,10 @@ require_once __DIR__ . '/model/crud.php'
                 <label for="beer">Пиво: </label>
                 <input type="text" name="beer" id="beer" required maxlength="10" />
             </div>
- 
-            <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
             <div>
                 <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-            async defer>
-        </script>
 
     </div>
 
