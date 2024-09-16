@@ -83,6 +83,9 @@ require_once __DIR__ . '/model/crud.php'
                 <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async defer>
+        </script>
 
         <!-- <script>
             function check() {
