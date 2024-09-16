@@ -45,6 +45,8 @@ require_once __DIR__ . '/model/connect.php';
             echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
             echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
             foreach ($result as $row) {
+                $date = date_parse($row["create_date"]);
+                echo $date['year'];
                 echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["beer"] . "</td>";
