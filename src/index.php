@@ -1,7 +1,6 @@
 <?php
 // require_once __DIR__ . '/model/rc4.php'
 require_once __DIR__ . '/model/crud.php';
-// include_once __DIR__ . '/model/captcha.php';
 ?>
 
 <!DOCTYPE html>
