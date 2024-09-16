@@ -76,9 +76,7 @@ require_once __DIR__ . '/model/crud.php'
                 <input type="checkbox" id="politics" onclick="check();" value="" autocomplete="off" />
                 Даю согласие на обработку данных
             </div> -->
-            <div>
-                <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
-            </div>
+            <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
             <div>
                 <input type="submit" name="submit" value="Отправить" />
             </div>
