@@ -38,12 +38,13 @@ require_once __DIR__ . '/model/crud.php';
         if ($result = read_table($conn)) {
             $rowsCount = $result->num_rows;
             echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
-            echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
+            // echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
+            echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th></tr>";
             foreach ($result as $row) {
                 echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["beer"] . "</td>";
-                echo "<td>" . $row['create_date'] . "</td>";
+                // echo "<td>" . $row['create_date'] . "</td>";
                 echo "</tr>";
             }
 
