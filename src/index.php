@@ -86,6 +86,9 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
                 <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
+        <?php
+        echo $public_key;
+        ?>
 
     </div>
 
