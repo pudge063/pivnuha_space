@@ -89,6 +89,7 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
         <?php
         echo $public_key;
         echo getenv("CAPTCHA_SECRET_KEY");
+        echo $valid_captcha;
         ?>
 
     </div>
