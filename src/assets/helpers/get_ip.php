@@ -1,5 +1,6 @@
 <?php
-function getIp() {
+function getIp()
+{
   $keys = [
     'HTTP_CLIENT_IP',
     'HTTP_X_FORWARDED_FOR',

@@ -87,16 +87,6 @@ require_once __DIR__ . '/model/crud.php';
 
     </div>
 
-    <div class="container" hidden>
-        <?php
-        // $key = '0123456789abcdef';
-        // $data = 'Hello World!';
-        // $res = rc4($key, $data);
-        // echo "initial text: " . $data . "<br>";
-        // echo "decrypted by rc4: " . $res . "<br>;";
-        // printf("encrypted by rc4: " . rc4($key, $res));
-        ?>
-    </div>
 </body>
 
 </html>

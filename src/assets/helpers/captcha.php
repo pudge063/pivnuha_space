@@ -6,7 +6,6 @@ function validate_capthca()
     if (!empty($_POST['g-recaptcha-response'])) {
         $secretKey = '6LdV-kUqAAAAAJvH5Ptw8hxfvp0wRtCcXcCGSy7g';
 
-        // Google reCAPTCHA verification API Request 
         $api_url = 'https://www.google.com/recaptcha/api/siteverify';
         $resq_data = array(
             'secret' => $secretKey,
@@ -30,7 +29,6 @@ function validate_capthca()
         }
         curl_close($ch);
 
-        // Decode JSON data of API response in array 
         $responseData = json_decode($response);
 
         if (!empty($responseData) && $responseData->success) {
