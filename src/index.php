@@ -88,7 +88,7 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
         </form>
         <?php
         echo $public_key;
-        echo getenv("CAPTCHA_PRIVATE_KEY");
+        echo getenv("CAPTCHA_SECRET_KEY");
         ?>
 
     </div>

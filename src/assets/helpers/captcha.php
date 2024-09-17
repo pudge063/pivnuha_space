@@ -2,7 +2,7 @@
 
 function validate_capthca()
 {
-    $secretKey = getenv("CAPTCHA_PRIVATE_KEY");
+    $secretKey = getenv("CAPTCHA_SECRET_KEY");
 
     if (!empty($_POST['g-recaptcha-response'])) {
 
