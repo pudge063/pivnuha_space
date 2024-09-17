@@ -78,19 +78,14 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
                 <input type="text" name="beer" id="beer" required maxlength="20" />
             </div>
             <div class="captcha-wrapper">
-                <?php
-                echo "<div class='g-recaptcha' data-sitekey=$public_key></div>"
-                ?>
+
+                <div class='g-recaptcha' data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
+
             </div>
             <div>
                 <input type="submit" name="submit" value="Отправить" />
             </div>
         </form>
-        <?php
-        echo $public_key;
-        echo getenv("CAPTCHA_SECRET_KEY");
-        echo $valid_captcha;
-        ?>
 
     </div>
 
