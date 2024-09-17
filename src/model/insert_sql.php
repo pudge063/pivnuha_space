@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/connect.php';
-require_once __DIR__ . '/../assets/helpers/get_ip.php';
+// require_once __DIR__ . '/../assets/helpers/get_ip.php';
 require_once __DIR__ . '/../assets/helpers/captcha.php';
 
 $valid_captcha = validate_capthca();
