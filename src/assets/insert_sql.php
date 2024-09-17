@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../model/connect.php';
-require_once __DIR__ . '/../get_ip.php';
+require_once __DIR__ . '/../assets/helpers/get_ip.php';
 
 $secretKey = '6LdV-kUqAAAAAJvH5Ptw8hxfvp0wRtCcXcCGSy7g';
 

@@ -8,3 +8,6 @@ Deploy:
   script:
     - echo "test!"
     - docker compose up --build -d
+  only:
+    - main
+  
