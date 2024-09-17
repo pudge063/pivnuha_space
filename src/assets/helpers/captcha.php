@@ -2,8 +2,8 @@
 
 function validate_capthca()
 {
-    // $secretKey = getenv("CAPTCHA_SECRET_KEY");
-    $secretKey = '6LdV-kUqAAAAAJvH5Ptw8hxfvp0wRtCcXcCGSy7g';
+    $secretKey = getenv("CAPTCHA_SECRET_KEY");
+    // $secretKey = '6LdV-kUqAAAAAJvH5Ptw8hxfvp0wRtCcXcCGSy7g';
 
     if (!empty($_POST['g-recaptcha-response'])) {
 
@@ -40,5 +40,5 @@ function validate_capthca()
         }
     }
 
-    return $valid_captcha;
+    return $secretKey;
 }
