@@ -34,6 +34,8 @@ services:
       - MYSQL_USER=$MYSQL_USER
       - MYSQL_PASSWORD=$MYSQL_PASSWORD
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - CAPTCHA_SECRET_KEY=$CAPTCHA_SECRET_KEY
+      - CAPTCHA_PUBLIC_KEY=$CAPTCHA_PUBLIC_KEY
   phpmyadmin:
     container_name: phpmyadmin
     restart: always

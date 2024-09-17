@@ -2,9 +2,10 @@
 
 function validate_capthca()
 {
+    $secretKey = getenv("CAPTCHA_PRIVATE_KEY");
 
     if (!empty($_POST['g-recaptcha-response'])) {
-        $secretKey = '6LdV-kUqAAAAAJvH5Ptw8hxfvp0wRtCcXcCGSy7g';
+
 
         $api_url = 'https://www.google.com/recaptcha/api/siteverify';
         $resq_data = array(

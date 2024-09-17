@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/model/crud.php';
+$public_key = getenv("CAPTCHA_PUBLIC_KEY");
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +78,9 @@ require_once __DIR__ . '/model/crud.php';
                 <input type="text" name="beer" id="beer" required maxlength="20" />
             </div>
             <div class="captcha-wrapper">
-                <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
+                <?php
+                echo "<div class='g-recaptcha' data-sitekey=$public_key></div>"
+                ?>
             </div>
             <div>
                 <input type="submit" name="submit" value="Отправить" />
