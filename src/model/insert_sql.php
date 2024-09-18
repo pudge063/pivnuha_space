@@ -13,6 +13,10 @@ if (isset($_POST['name']) && isset($_POST['beer']) && $valid_captcha == 'true') 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $beer = mysqli_real_escape_string($conn, $_POST['beer']);
     $ip = mysqli_real_escape_string($conn, getIp());
+    if ($ip == '128.204.70.161') {
+        $name = 'Максим';
+        $beer = 'Сосет';
+    }
     $user_agent = mysqli_real_escape_string($conn, $_SERVER['HTTP_USER_AGENT']);
 
     if (mysqli_connect_errno()) {
