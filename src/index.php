@@ -40,7 +40,7 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
     </div> -->
 
     <div class="container">
-
+        <p style="text-align: center; margin: 0; padding: 0;">Однажды pivnuha.space будет по умолчанию в закладках Chrome</p>
     </div>
 
     <div class="container">
