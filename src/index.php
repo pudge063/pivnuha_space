@@ -37,8 +37,8 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
         <form action="sea_battle/">
             <button>В бой!</button>
         </form>
-    </div>
-    <div class="container"> -->
+    </div> -->
+    <div class="container">
 
         <?php
         if ($result = read_table($conn)) {
