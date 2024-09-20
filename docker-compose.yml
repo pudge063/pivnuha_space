@@ -34,6 +34,7 @@ services:
       - MYSQL_USER=$MYSQL_USER
       - MYSQL_PASSWORD=$MYSQL_PASSWORD
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      - DB_HOST=$DB_HOST
       - CAPTCHA_SECRET_KEY=$CAPTCHA_SECRET_KEY
       - CAPTCHA_PUBLIC_KEY=$CAPTCHA_PUBLIC_KEY
   phpmyadmin:
@@ -43,7 +44,7 @@ services:
     ports:
       - 8080:80
     environment:
-      - PMA_HOST=db
+      - PMA_HOST=$DB_HOST
       - PMA_PORT=3306
     depends_on:
       - db

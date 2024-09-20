@@ -1,5 +1,5 @@
 <?php
-$db_host = 'db';
+$db_host = getenv("DB_HOST");
 $db_user = getenv("MYSQL_USER");
 $db_password = getenv("MYSQL_PASSWORD");
 $db_name = 'db_test';
