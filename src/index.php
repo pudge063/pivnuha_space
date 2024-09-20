@@ -43,6 +43,16 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
         <p style="text-align: center; margin: 0; padding: 0;">Однажды pivnuha.space будет по умолчанию в закладках Chrome</p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
+
+    <script>
+        var sound = new Howl({
+            src: ['steam-screenshot-capture-sound-hurts-my-ears.mp3'],
+            volume: 1,
+            // loop: true,
+        });
+    </script>
+
     <div class="container">
 
         <?php
@@ -94,7 +104,7 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
 
             </div>
             <div>
-                <input type="submit" name="submit" value="Отправить" />
+                <input type="submit" name="submit" value="Отправить" onclick="sound.play()"/>
             </div>
         </form>
 

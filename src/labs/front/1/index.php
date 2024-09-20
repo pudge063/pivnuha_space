@@ -36,7 +36,8 @@
     </div>
 
     <script>
-        a = document.getElementById('a');
+        
+        a = document.DOMException.getElementById('a');
         
         // int: a = 1;
         int: b = 2;
