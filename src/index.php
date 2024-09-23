@@ -31,6 +31,19 @@ if (isset($_SESSION["user_id"])) {
 </head>
 
 <body>
+
+    <script>
+        var sound = new Howl({
+            src: ['assets/static/sounds/steam-screenshot-capture-sound-hurts-my-ears.mp3'],
+            volume: 1,
+        });
+
+        var sound_error = new Howl({
+            src: ['assets/static/sounds/silence.mp3'],
+            volume: 1,
+        });
+    </script>
+
     <header class="container">
         <div class="header-item">
             <img src="/assets/static/beer.png" alt="beer">
@@ -76,8 +89,7 @@ if (isset($_SESSION["user_id"])) {
         <?php
         if (isset($user_id)) {
             $placeholder = "$username, что у вас на уме?";
-        }
-        else {
+        } else {
             $placeholder = "Войдите или зарегистрируйтесь, чтобы добавить пост.";
         }
         ?>
@@ -88,16 +100,14 @@ if (isset($_SESSION["user_id"])) {
             <div class="button-container">
                 <?php
                 if (isset($user_id)) {
-                    echo "<input type='submit' value='Отправить' class='submit-button'>";
-                }
-                else {
                     echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound.play()'>";
+                } else {
+                    echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound-error.play()'>";
                 }
-                
                 ?>
-                <button onclick="sound_error.play()"></button>
             </div>
         </form>
+        <input type="submit" value="Press" class='submit-button' onclick='sound.play()'>
     </div>
 
 
@@ -133,17 +143,6 @@ if (isset($_SESSION["user_id"])) {
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script> -->
 
-    <script>
-        var sound = new Howl({
-            src: ['assets/static/sounds/steam-screenshot-capture-sound-hurts-my-ears.mp3'],
-            volume: 1,
-        });
-
-        var sound_error = new Howl({
-            src: ['assets/static/sounds/silence.mp3'],
-            volume: 1,
-        });
-    </script>
 
     <div class="container">
 
