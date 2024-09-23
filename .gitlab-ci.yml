@@ -8,7 +8,7 @@ Deploy:
   script:
     - echo "test!"
     - chmod -R 775 src/assets/static/uploads/
-    - sudo chown -R www-data:www-data src/assets/static/uploads/
+    - chown -R www-data:www-data src/assets/static/uploads/
     - docker compose up --build -d
   only:
     - main
