@@ -86,7 +86,15 @@ if (isset($_SESSION["user_id"])) {
             echo "<textarea name='post_content' id='post_content' placeholder='$placeholder' required></textarea>";
             ?>
             <div class="button-container">
-                <input type="submit" value="Отправить" class="submit-button">
+                <?php
+                if (isset($user_id)) {
+                    echo "<input type='submit' value='Отправить' class='submit-button'>";
+                }
+                else {
+                    echo "<input type='submit' value='Отправить' class='submit-button' onclick=sound.play()>";
+                }
+                
+                ?>
             </div>
         </form>
     </div>
@@ -124,12 +132,17 @@ if (isset($_SESSION["user_id"])) {
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script> -->
 
-    <!-- <script>
+    <script>
         var sound = new Howl({
-            src: ['steam-screenshot-capture-sound-hurts-my-ears.mp3'],
+            src: ['assets/static/sounds/steam-screenshot-capture-sound-hurts-my-ears.mp3'],
             volume: 1,
         });
-    </script> -->
+
+        var sound_error = new Howl({
+            src: ['assets/static/sounds/silence.mp3'],
+            volume: 1,
+        });
+    </script>
 
     <div class="container">
 

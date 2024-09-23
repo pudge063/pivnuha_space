@@ -57,7 +57,7 @@ session_start();
             </div>
 
             <div>
-                <input type="submit" name="submit" value="Отправить" onclick="sound.play()" />
+                <input type="submit" name="submit" value="Отправить" onclick="sound-error.play()" />
             </div>
             <div>
                 <a href="../auth/register.php">Уже есть аккаунт? Войти</a>
