@@ -104,12 +104,11 @@ if (isset($_SESSION["user_id"])) {
                 if (isset($user_id)) {
                     echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound.play()'>";
                 } else {
-                    echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound-error.play()'>";
+                    echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound-error.play()' disabled>";
                 }
                 ?>
             </div>
         </form>
-        <button onclick="sound_error.play()"></button>
     </div>
 
 
