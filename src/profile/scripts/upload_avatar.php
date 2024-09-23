@@ -4,7 +4,8 @@ session_start();
 
 if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     $user_id = $_SESSION['user_id'];
-    $target_dir = "../../assets/static/uploads/$user_id/";
+    // Обновлённый путь к директории
+    $target_dir = __DIR__ . '/../../../src/assets/static/uploads/' . $user_id . '/';
 
     // Создание директории, если она не существует
     if (!is_dir($target_dir)) {
@@ -27,8 +28,8 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
 
     if (!is_writable($target_dir)) {
         $errors[] = "Директория не доступна для записи: $target_dir";
+        $uploadOk = 0; // Добавляем эту строку, чтобы установить $uploadOk в 0
     }
-
 
     if (file_exists($target_file)) {
         $errors[] = "Извините, файл уже существует.";
