@@ -6,8 +6,14 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
+    foreach ($_SESSION['errors'] as $error) {
+        echo "<p style='color:red;'>$error</p>";
+    }
+    unset($_SESSION['errors']); // Удаляем ошибки после отображения
+}
+
 $name = $_SESSION['name'];
-echo $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>

@@ -10,13 +10,11 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     // Создание директории, если она не существует
     if (!is_dir($target_dir)) {
         // Если нет, создаём её
-        if (mkdir($target_dir, 0777, true)) {
-            echo "Директория успешно создана.";
-        } else {
-            echo "Не удалось создать директорию.";
+        if (!mkdir($target_dir, 0777, true)) {
+            $_SESSION['errors'][] = "Не удалось создать директорию.";
         }
     } else {
-        echo "Директория уже существует.";
+        $_SESSION['errors'][] = "Директория уже существует.";
     }
 
     $ava = "/assets/static/uploads/$user_id/" . basename($_FILES["avatar"]["name"]);
@@ -33,7 +31,7 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
 
     if (!is_writable($target_dir)) {
         $errors[] = "Директория не доступна для записи: $target_dir";
-        $uploadOk = 0; // Добавляем эту строку, чтобы установить $uploadOk в 0
+        $uploadOk = 0;
     }
 
     if (file_exists($target_file)) {
@@ -68,10 +66,10 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     mysqli_close($conn);
 
     if (!empty($errors)) {
-        $_SESSION['errors'] = $errors;
+        $_SESSION['errors'] = array_merge($_SESSION['errors'] ?? [], $errors);
     }
 
+    // Перенаправление происходит в конце, после обработки всех ошибок
     header("Location: ../profile.php");
     exit;
 }
-?>
