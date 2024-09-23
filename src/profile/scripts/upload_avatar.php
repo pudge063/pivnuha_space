@@ -67,5 +67,5 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     }
 
     header("Location: ../profile.php");
-    exit; // Добавлено для предотвращения дальнейшего выполнения скрипта
+    exit;
 }

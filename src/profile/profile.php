@@ -7,6 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $name = $_SESSION['name'];
+echo $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>
