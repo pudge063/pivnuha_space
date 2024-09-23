@@ -7,7 +7,6 @@ Deploy:
     - sh
   script:
     - echo "test!"
-    - sudo chmod -R 777 src/assets/static/uploads/
     - docker compose up --build -d
   only:
     - main

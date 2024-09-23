@@ -25,6 +25,11 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
         $uploadOk = 0;
     }
 
+    if (!is_writable($target_dir)) {
+        $errors[] = "Директория не доступна для записи: $target_dir";
+    }
+
+
     if (file_exists($target_file)) {
         $errors[] = "Извините, файл уже существует.";
         $uploadOk = 0;
