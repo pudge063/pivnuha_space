@@ -10,4 +10,3 @@ Deploy:
     - docker compose up --build -d
   only:
     - main
-  

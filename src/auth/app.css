@@ -1,0 +1,122 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1%;
+    background-color: #f4f4f4;
+    font: bolder;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-item img {
+    max-width: 50px;
+}
+
+h1,
+h2 {
+    font-size: 2em;
+    color: blueviolet;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px blueviolet;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 400px;
+    justify-content: center;
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 2px 2px 20px blueviolet;
+    padding: 20px;
+}
+
+form div {
+    margin: 10px 0;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid blueviolet;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #b42929;
+    box-shadow: 0 0 5px rgba(180, 41, 41, 0.5);
+}
+
+input[type="submit"] {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    min-height: 40px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: blue;
+}
+
+input[type="submit"]:disabled {
+    background-color: #b42929;
+}
+
+.captcha-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.errors {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.errors ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.errors li {
+    margin-bottom: 5px;
+}

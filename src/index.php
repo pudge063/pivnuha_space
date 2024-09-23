@@ -1,6 +1,16 @@
 <?php
 require_once __DIR__ . '/model/crud.php';
 $public_key = getenv("CAPTCHA_PUBLIC_KEY");
+
+
+session_start();
+// $user_id = -1;
+if (isset($_SESSION["user_id"])) {
+    $user_id = $_SESSION['user_id'];
+    $username = $_SESSION['name'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -32,32 +42,101 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
             <img src="/assets/static/beer.png" alt="beer">
         </div>
     </header>
-    <!-- <div class="container">
-        <p style="text-align: center;">Играть в морской бой</p>
-        <form action="sea_battle/">
-            <button>В бой!</button>
-        </form>
-    </div> -->
+
+    <?php
+    if (!isset($_SESSION['user_id'])) {
+        echo
+        "<div class='container'>
+            <h2>Добро пожаловать!</h2>
+            <div class='button-group'>
+                <a href='/auth/register.php' class='button'>Зарегистрироваться</a>
+                <a href='/auth/login.php' class='button'>Войти</a>
+            </div>
+        </div>";
+    } else {
+        $name = $_SESSION['name'];
+        echo
+        "<div class='container'>
+            <h2>Профиль $name</h2>
+            <div class='button-group'>
+                <a href='profile/profile.php' class='button profile-button'>Мой профиль</a>
+                <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
+            </div>
+        </div>";
+    }
+    ?>
+
 
     <div class="container">
         <p style="text-align: center; margin: 0; padding: 0;">Однажды pivnuha.space будет по умолчанию в закладках Chrome</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
+    <div class="container">
+        <h2>Создать пост</h2>
+        <?php
+        if (isset($user_id)) {
+            $placeholder = "$username, что у вас на уме?";
+        }
+        else {
+            $placeholder = "Войдите или зарегистрируйтесь, чтобы добавить пост.";
+        }
+        ?>
+        <form action="assets/helpers/create_post.php" method="post" class="post-form">
+            <?php
+            echo "<textarea name='post_content' id='post_content' placeholder='$placeholder' required></textarea>";
+            ?>
+            <div class="button-container">
+                <input type="submit" value="Отправить" class="submit-button">
+            </div>
+        </form>
+    </div>
 
-    <script>
+
+    <div class='container'>
+        <h2>Посты</h2>
+        <?php
+        if ($result = read_posts($conn)) {
+            $rowsCount = $result->num_rows;
+            foreach ($result as $row) {
+                echo "
+                <div class='post-item'>
+                    <div class='post-header'>
+                        <img src='" . $row['avatar'] . "' alt='Аватар' class='avatar'>
+                        <div class='user-info'>
+                            <h3>" . $row['name'] . "</h3>
+                            <span class='post-date'>" . $row['date'] . "</span>
+                        </div>";
+                if (isset($user_id) && $row['user_id'] == $_SESSION['user_id']) {
+                    echo "
+                            <form action='assets/helpers/delete_post.php' method='POST' style='display: inline;'>
+                                <input type='hidden' name='post_id' value='" . $row['id'] . "'>
+                                <button type='submit' class='delete-button'>Удалить</button>
+                            </form>";
+                }
+                echo "
+                        </div>
+                        <p class='post-content'>" . htmlspecialchars($row['text']) . "</p>
+                    </div>";
+            }
+        }
+        ?>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script> -->
+
+    <!-- <script>
         var sound = new Howl({
             src: ['steam-screenshot-capture-sound-hurts-my-ears.mp3'],
             volume: 1,
-            // loop: true,
         });
-    </script>
+    </script> -->
 
     <div class="container">
 
         <?php
         if ($result = read_table($conn)) {
             $rowsCount = $result->num_rows;
+            echo "<p style='text-align: center;'>Увековечено в камне</p>";
             echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
             // echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
             echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th></tr>";
@@ -87,7 +166,7 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
         ?>
 
     </div>
-    <div class="container">
+    <!-- <div class="container">
         <h2>Отметиться</h2>
         <form action="/model/insert_sql.php" method="post" class="form-example" id="form-example">
             <div>
@@ -104,11 +183,11 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
 
             </div>
             <div>
-                <input type="submit" name="submit" value="Отправить" onclick="sound.play()"/>
+                <input type="submit" name="submit" value="Отправить" onclick="sound.play()" />
             </div>
         </form>
 
-    </div>
+    </div> -->
 
 </body>
 
