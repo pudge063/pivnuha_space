@@ -5,13 +5,12 @@ session_start();
 if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     $user_id = $_SESSION['user_id'];
     // Обновлённый путь к директории
-    $target_dir = __DIR__ . '../../assets/static/uploads/' . $user_id . '/';
+    $target_dir = __DIR__ . '/../../assets/static/uploads/' . $user_id . '/';
 
     // Создание директории, если она не существует
-
-    if (!is_dir($dir)) {
+    if (!is_dir($target_dir)) {
         // Если нет, создаём её
-        if (mkdir($dir, 0777, true)) {
+        if (mkdir($target_dir, 0777, true)) {
             echo "Директория успешно создана.";
         } else {
             echo "Не удалось создать директорию.";
@@ -75,3 +74,4 @@ if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     header("Location: ../profile.php");
     exit;
 }
+?>
