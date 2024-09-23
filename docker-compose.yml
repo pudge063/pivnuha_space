@@ -28,7 +28,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    user: "33:33"
+    user: root
     volumes:
       - './src:/var/www/html'
     depends_on:
