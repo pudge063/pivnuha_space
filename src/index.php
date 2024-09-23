@@ -39,7 +39,7 @@ if (isset($_SESSION["user_id"])) {
         });
 
         var sound_error = new Howl({
-            src: ['assets/static/sounds/silence.mp3'],
+            src: ['silence.mp3'],
             volume: 1,
         });
     </script>
