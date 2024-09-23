@@ -1,27 +1,29 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 1%;
+    padding: 2%;
     background-color: #f4f4f4;
-    font: bolder;
+    color: #333;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-item {
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 10px 0;
 }
 
 .header-item img {
     max-width: 50px;
 }
 
-h1,
+h1 {
+    font-size: 2.5em;
+    color: blueviolet;
+    text-align: center;
+    margin: 0;
+}
+
 h2 {
     font-size: 2em;
     color: blueviolet;
@@ -31,33 +33,28 @@ h2 {
 
 .container {
     max-width: 700px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 20px auto;
     padding: 20px;
-    padding-left: 2vh;
-    padding-right: 2vh;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 2px 2px 20px blueviolet;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
-form {
+form.form-example {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 400px;
-    justify-content: center;
+    padding: 20px;
     border: 2px solid blueviolet;
     border-radius: 8px;
-    box-shadow: 2px 2px 20px blueviolet;
-    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-form div {
-    margin: 10px 0;
+.form-example div {
+    margin-bottom: 15px;
 }
 
-label {
+.form-example label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
@@ -65,9 +62,10 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="submit"] {
     padding: 10px;
-    border: 1px solid blueviolet;
+    border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
@@ -77,8 +75,8 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #b42929;
-    box-shadow: 0 0 5px rgba(180, 41, 41, 0.5);
+    border-color: blueviolet;
+    box-shadow: 0 0 5px rgba(70, 130, 180, 0.5);
 }
 
 input[type="submit"] {
@@ -86,12 +84,14 @@ input[type="submit"] {
     color: white;
     border: none;
     cursor: pointer;
-    min-height: 40px;
-    margin-top: 10px;
+    min-height: 45px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 input[type="submit"]:hover {
-    background-color: blue;
+    background-color: #6a0dad;
+    transform: translateY(-2px);
 }
 
 input[type="submit"]:disabled {
@@ -110,6 +110,7 @@ input[type="submit"]:disabled {
 .errors {
     color: red;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .errors ul {

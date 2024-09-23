@@ -7,7 +7,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Регистрация</title>
     <link rel="stylesheet" href="app.css">
 </head>
@@ -74,6 +74,9 @@ session_start();
 
             <div>
                 <input type="submit" name="submit" value="Отправить" onclick="sound.play()" />
+            </div>
+            <div>
+                <a href="../auth/login.php">Уже есть аккаунт? Войти</a>
             </div>
         </form>
     </div>

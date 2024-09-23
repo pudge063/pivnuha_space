@@ -10,7 +10,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
     foreach ($_SESSION['errors'] as $error) {
         echo "<p style='color:red;'>$error</p>";
     }
-    unset($_SESSION['errors']); // Удаляем ошибки после отображения
+    unset($_SESSION['errors']);
 }
 
 $name = $_SESSION['name'];
@@ -21,7 +21,7 @@ $name = $_SESSION['name'];
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Профиль</title>
     <link rel="stylesheet" href="app.css">
 </head>
@@ -39,19 +39,6 @@ $name = $_SESSION['name'];
         </div>
     </header>
 
-    <div class="container error-container" id="error-container" hidden>
-        <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])): ?>
-            <div class="errors">
-                <ul>
-                    <?php foreach ($_SESSION['errors'] as $error): ?>
-                        <li><?php echo $error; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <?php unset($_SESSION['errors']); ?>
-        <?php endif; ?>
-    </div>
-
     <div class="container profile-info">
         <h2>Профиль <?php echo htmlspecialchars($name); ?></h2>
         <div class="button-group">
@@ -67,7 +54,7 @@ $name = $_SESSION['name'];
                 <label for="avatar">Выберите файл аватара:</label>
                 <input type="file" name="avatar" id="avatar" accept="image/*" required>
             </div>
-            <input type="submit" value="Загрузить" class="submit-button">
+            <input type="submit" value="Загрузить" class="submit-button" disabled>
         </form>
     </div>
 
