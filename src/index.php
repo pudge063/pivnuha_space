@@ -42,6 +42,8 @@ if (isset($_SESSION["user_id"])) {
             src: ['silence.mp3'],
             volume: 1,
         });
+
+        play.sound_error();
     </script>
 
     <header class="container">
@@ -107,7 +109,7 @@ if (isset($_SESSION["user_id"])) {
                 ?>
             </div>
         </form>
-        <input type="submit" value="Press" class='submit-button' onclick='sound-error.play()'>
+        <button onclick="sound_error.play()"></button>
     </div>
 
 
