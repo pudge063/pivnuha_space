@@ -107,7 +107,7 @@ if (isset($_SESSION["user_id"])) {
                 ?>
             </div>
         </form>
-        <input type="submit" value="Press" class='submit-button' onclick='sound.play()'>
+        <input type="submit" value="Press" class='submit-button' onclick='sound-error.play()'>
     </div>
 
 
