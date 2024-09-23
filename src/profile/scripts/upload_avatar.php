@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['user_id']) && isset($_FILES['avatar'])) {
     $user_id = $_SESSION['user_id'];
     // Обновлённый путь к директории
-    $target_dir = __DIR__ . '/uploads/' . $user_id . '/';
+    $target_dir = __DIR__ . '../../assets/static/uploads/' . $user_id . '/';
 
     // Создание директории, если она не существует
     if (!is_dir($target_dir)) {
