@@ -54,8 +54,8 @@
 }
 
 .post-content {
-    margin-top: 10px; /* отступ сверху */
-    color: #555; /* цвет текста */
-    font-size: 1em; /* стандартный размер шрифта */
-    line-height: 1.5; /* высота строки для удобства чтения */
+    margin-top: 10px;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.5;
 }

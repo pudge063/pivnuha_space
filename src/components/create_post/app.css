@@ -1,0 +1,84 @@
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.post-item h3 {
+    font-size: 1.2em;
+    color: blueviolet;
+    margin: 0;
+}
+
+.post-date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #e60000;
+}
+
+.post-content {
+    margin-top: 10px;
+    color: #555;
+    width: 100%;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+#post_content {
+    width: 95%;
+    margin: 10px auto;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #4043d9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #212488;
+}
+
+.button-container {
+    margin-top: 10px;
+}
