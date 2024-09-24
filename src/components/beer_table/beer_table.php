@@ -1,13 +1,13 @@
 <div class="container">
 
     <?php
-    if ($result = read_table($conn)) {
-        $rowsCount = $result->num_rows;
+    if (isset($table_rows)) {
+        $rowsCount = $table_rows->num_rows;
         echo "<p style='text-align: center;'>Увековечено в камне</p>";
         echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
         // echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
         echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th></tr>";
-        foreach ($result as $row) {
+        foreach ($table_rows as $row) {
             echo "<tr>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["beer"] . "</td>";

@@ -62,6 +62,10 @@ class PostController
             }
         }
     }
+
+    public function read_table() {
+        return $this->postModel->readTable();
+    }
 }
 
 

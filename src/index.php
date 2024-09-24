@@ -2,8 +2,6 @@
 session_start();
 $page = 'index';
 
-require_once __DIR__ . '/model/crud.php';
-
 require_once __DIR__ . '/model/Post.php';
 require_once __DIR__ . '/controller/PostController.php';
 
@@ -12,9 +10,7 @@ $public_key = getenv("CAPTCHA_PUBLIC_KEY");
 
 $postController = new PostController($conn);
 $posts = $postController->index();
-
-
-
+$table_rows = $postController->read_table();
 
 if (isset($_SESSION["user_id"])) {
     $user_id = $_SESSION['user_id'];

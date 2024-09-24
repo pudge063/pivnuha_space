@@ -54,4 +54,11 @@ class Post
         $stmt->bind_param("is", $user_id, $post_content); // "is" - integer и string
         return $stmt->execute();
     }
+
+    public function readTable()
+    {
+        $query = "SELECT * FROM test1 ORDER BY create_date DESC LIMIT 30;";
+        $result = $this->conn->query($query);
+        return $result;
+    }
 }
