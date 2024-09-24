@@ -15,16 +15,16 @@
                     "
                     <div class='button-group'>
                         <a href='views/users/profile.php' class='button profile-button'>Мой профиль</a>
-                        <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
+                        <a href='../../controller/ProfileController.php?action=logout' class='button profile-button'>Выход</a>
                     </div>";
                 }
             } elseif ($page === 'register' || $page === 'login') {
-                echo "<a href='../' class='button profile-button'>На главную</a>";
+                echo "<a href='../../' class='button profile-button'>На главную</a>";
             } elseif ($page === 'profile') {
                 if (isset($_SESSION['user_id'])) {
                     echo "
                     <a href='/../../' class='button profile-button'>Главная</a>
-                    <a href='/../../auth/scripts/logout.php' class='button profile-button'>Выход</a>";
+                    <a href='/../../controller/ProfileController.php?action=logout' class='button profile-button'>Выход</a>";
                 }
             } elseif ($page === 'user') {
                 echo "

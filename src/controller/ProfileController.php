@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../model/User.php';
+require_once __DIR__ . '/../captcha.php';
 
 class UserController
 {
@@ -23,6 +24,8 @@ class UserController
         $user = $this->userModel->get_user_by_username($username);
         return $user;
     }
+
+    public function logout() {}
 }
 
 
@@ -31,10 +34,19 @@ $userController = new UserController($dbConnection);
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if ($action === 'login') {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+        $is_valid = validate_capthca();
+
+        if ($is_valid == false || !isset($is_valid)) {
+            $errors[] = 'Не пройдена капча.';
+            $_SESSION['errors'] = $errors;
+            header('Location: ../views/auth/login.php');
+            exit();
         }
+
         if (!empty($_POST)) {
             $username = $_POST["username"];
             $password = $_POST["password"];
@@ -53,5 +65,16 @@ if (isset($_GET['action'])) {
             $_SESSION["errors"] = $errors;
             header("Location: ../views/auth/login.php");
         }
+    } elseif ($_GET['action'] === 'logout') {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $_SESSION = [];
+
+        session_destroy();
+
+        header('Location: ../../');
+        exit();
     }
 }
