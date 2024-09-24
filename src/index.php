@@ -20,32 +20,21 @@ if (isset($_SESSION["user_id"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" href="assets/menu.css">
+    <link rel="stylesheet" href="assets/new_post.css">
+    <link rel="stylesheet" href="assets/posts.css">
     <title>Pivnuha Space!</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+
+    <!-- <script>
         function onSubmit(token) {
             document.getElementById("form-example").submit();
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
-
-    <script>
-        var sound = new Howl({
-            src: ['assets/static/sounds/steam-screenshot-capture-sound-hurts-my-ears.mp3'],
-            volume: 1,
-        });
-
-        var sound_error = new Howl({
-            src: ['silence.mp3'],
-            volume: 1,
-        });
-
-        play.sound_error();
-    </script>
-
     <header class="container">
         <div class="header-item">
             <img src="/assets/static/beer.png" alt="beer">
@@ -62,17 +51,14 @@ if (isset($_SESSION["user_id"])) {
     if (!isset($_SESSION['user_id'])) {
         echo
         "<div class='container'>
-            <h2>Добро пожаловать!</h2>
-            <div class='button-group'>
+                <div class='button-group'>
                 <a href='/auth/register.php' class='button'>Зарегистрироваться</a>
                 <a href='/auth/login.php' class='button'>Войти</a>
             </div>
         </div>";
     } else {
-        $name = $_SESSION['name'];
         echo
         "<div class='container'>
-            <h2>Профиль $name</h2>
             <div class='button-group'>
                 <a href='profile/profile.php' class='button profile-button'>Мой профиль</a>
                 <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
@@ -102,9 +88,9 @@ if (isset($_SESSION["user_id"])) {
             <div class="button-container">
                 <?php
                 if (isset($user_id)) {
-                    echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound.play()'>";
+                    echo "<input type='submit' value='Отправить' class='submit-button'>";
                 } else {
-                    echo "<input type='submit' value='Отправить' class='submit-button' onclick='sound-error.play()' disabled>";
+                    echo "<input type='submit' value='Отправить' class='submit-button' onclick='playSilence()'>";
                 }
                 ?>
             </div>
@@ -119,31 +105,30 @@ if (isset($_SESSION["user_id"])) {
             $rowsCount = $result->num_rows;
             foreach ($result as $row) {
                 echo "
-                <div class='post-item'>
-                    <div class='post-header'>
+            <div class='post-item'>
+                <div class='post-header'>
+                    <a href='profile/users.php?id=" . $row['user_id'] . "'>
                         <img src='" . $row['avatar'] . "' alt='Аватар' class='avatar'>
-                        <div class='user-info'>
-                            <h3>" . $row['name'] . "</h3>
-                            <span class='post-date'>" . $row['date'] . "</span>
-                        </div>";
+                    </a>
+                    <div class='user-info'>
+                        <h3 class='username'><a href='profile/users.php?id=" . $row['user_id'] . "'>" . $row['name'] . "</a></h3>
+                        <span class='post-date'>" . $row['date'] . "</span>
+                    </div>";
                 if (isset($user_id) && $row['user_id'] == $_SESSION['user_id']) {
                     echo "
-                            <form action='assets/helpers/delete_post.php' method='POST' style='display: inline;'>
-                                <input type='hidden' name='post_id' value='" . $row['id'] . "'>
-                                <button type='submit' class='delete-button'>Удалить</button>
-                            </form>";
+                    <form action='assets/helpers/delete_post.php' method='POST' style='display: inline;'>
+                        <input type='hidden' name='post_id' value='" . $row['id'] . "'>
+                        <button type='submit' class='delete-button'>Удалить</button>
+                    </form>";
                 }
                 echo "
-                        </div>
-                        <p class='post-content'>" . htmlspecialchars($row['text']) . "</p>
-                    </div>";
+                </div>
+                <p class='post-content'>" . htmlspecialchars($row['text']) . "</p>
+            </div>";
             }
         }
         ?>
     </div>
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script> -->
-
 
     <div class="container">
 
@@ -202,6 +187,8 @@ if (isset($_SESSION["user_id"])) {
         </form>
 
     </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
+    <script src='assets/sounds.js'></script>
 
 </body>
 

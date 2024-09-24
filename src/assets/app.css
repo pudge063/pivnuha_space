@@ -3,22 +3,7 @@ body {
     margin: 0;
     padding: 1%;
     background-color: #f4f4f4;
-    font-weight: bolder; /* Исправлено на font-weight */
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-item {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.header-item img {
-    max-width: 50px;
+    font-weight: bolder;
 }
 
 h1,
@@ -26,14 +11,14 @@ h2 {
     font-size: 2em;
     color: blueviolet;
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .container {
     max-width: 700px;
     margin: 0 auto;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 10px;
     padding-left: 2vh;
     padding-right: 2vh;
     background-color: #fff;
@@ -56,7 +41,7 @@ th {
     box-shadow: 2px 2px 3px blueviolet;
 }
 
-form.form-example {
+.form-example {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -77,7 +62,8 @@ form.form-example {
     display: block;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
     padding: 0px;
     border: 1px solid blueviolet;
     border-radius: 4px;
@@ -86,99 +72,13 @@ input[type="text"] {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
     border-color: #b42929;
     box-shadow: 0 0 5px rgba(180, 41, 41, 0.5);
 }
 
-input[type="submit"] {
-    background-color: blueviolet;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
-    cursor: pointer;
-    min-height: 40px;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: blue;
-}
-
-input[type="submit"]:disabled {
-    background-color: #b42929;
-}
-
-.captcha-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: white;
-    background-color: blueviolet;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: blue;
-}
-
-.profile-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: white;
-    background-color: green;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.profile-button:hover {
-    background-color: darkgreen;
-}
-
-textarea {
-    display: block;
-    width: 95%;
-    margin: 10px auto;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-textarea:focus {
-    border-color: blueviolet;
-    box-shadow: 0 0 5px rgba(180, 41, 41, 0.5);
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
+input[type="submit"],
 .submit-button {
     background-color: blueviolet;
     color: white;
@@ -190,6 +90,7 @@ textarea:focus {
     transition: background-color 0.3s;
 }
 
+input[type="submit"]:hover,
 .submit-button:hover {
     background-color: blue;
 }
@@ -201,51 +102,4 @@ textarea:focus {
     border-radius: 5px;
     background-color: #f9f9f9;
     transition: box-shadow 0.3s;
-}
-
-.post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.user-info {
-    flex-grow: 1;
-}
-
-.post-item h3 {
-    font-size: 1.2em;
-    color: blueviolet;
-    margin: 0;
-}
-
-.post-date {
-    font-size: 0.9em;
-    color: #777;
-}
-
-.delete-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.delete-button:hover {
-    background-color: #e60000;
-}
-
-.post-content {
-    margin-top: 10px;
-    color: #555;
 }

@@ -1,0 +1,57 @@
+.post-item {
+    background-color: #ffffff; /* белый фон для поста */
+    border: 1px solid #e0e0e0; /* серый бордер */
+    border-radius: 8px; /* закругленные углы */
+    padding: 15px; /* внутренние отступы */
+    margin: 15px 0; /* отступы сверху и снизу */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тень для эффекта подъема */
+    transition: box-shadow 0.3s; /* эффект при наведении */
+}
+
+.post-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* увеличение тени при наведении */
+}
+
+.post-header {
+    display: flex;
+    align-items: center; /* выравнивание по центру */
+}
+
+.avatar {
+    width: 40px; /* размер аватара */
+    height: 40px; /* размер аватара */
+    border-radius: 50%; /* круглая форма */
+    margin-right: 10px; /* отступ справа */
+}
+
+.user-info {
+    flex-grow: 1; /* чтобы занять оставшееся пространство */
+}
+
+.username {
+    margin: 0; /* убрать отступы */
+    font-weight: bold; /* жирный шрифт для имени */
+    font-size: 0.9em; /* меньший размер шрифта */
+}
+
+.username a {
+    color: #555; /* цвет текста, чтобы он не выглядел как ссылка */
+    text-decoration: none; /* убрать подчеркивание */
+}
+
+.username a:hover {
+    text-decoration: none; /* убрать подчеркивание при наведении */
+}
+
+
+.post-date {
+    font-size: 0.85em; /* меньший размер шрифта для даты */
+    color: #999; /* цвет текста для даты */
+}
+
+.post-content {
+    margin-top: 10px; /* отступ сверху */
+    color: #555; /* цвет текста */
+    font-size: 1em; /* стандартный размер шрифта */
+    line-height: 1.5; /* высота строки для удобства чтения */
+}
