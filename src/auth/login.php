@@ -51,7 +51,7 @@ session_start();
     </div>
 
     <div class="container">
-        <h2>Регистрация</h2>
+        <h2>Вход</h2>
 
         <form action="scripts/login.php" method="post" class="form-example" id="form-example">
             <div>
