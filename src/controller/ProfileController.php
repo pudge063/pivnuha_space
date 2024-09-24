@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/../model/User.php';
 require_once __DIR__ . '/../captcha.php';
+// require_once __DIR__ . '/../model/Database.php';
+require_once __DIR__ . '/../connect.php';
 
 class UserController
 {
@@ -33,8 +35,11 @@ class UserController
     {
         $this->userModel->create_user($username, $name, $phone, $email, $password);
     }
-}
 
+    public function updateUser() {
+        
+    }
+}
 
 $dbConnection = $conn;
 $userController = new UserController($dbConnection);

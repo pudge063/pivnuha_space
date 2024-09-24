@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../model/Post.php';
+require_once __DIR__ . '/../model/Database.php';
 
 class PostController
 {
@@ -73,7 +74,7 @@ $dbConnection = $conn;
 $postController = new PostController($dbConnection);
 
 
-$dbConnection = $conn;
+// $dbConnection = $conn;
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     if ($action === 'delete') {

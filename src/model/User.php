@@ -88,7 +88,7 @@ class User
         if ($rowsCount > 0) {
             return true;
         }
-        return false;
+        return true;
     }
 }
 
