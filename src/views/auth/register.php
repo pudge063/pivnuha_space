@@ -19,22 +19,22 @@ $page = 'register';
     <title>Регистрация</title>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../../app.css">
 
 </head>
 
 <body>
-    <link rel="stylesheet" href="../components/header/app.css">
-    <?php include '../components/header/header.php'; ?>
+    <link rel="stylesheet" href="../../components/header/app.css">
+    <?php include '../../components/header/header.php'; ?>
 
-    <link rel="stylesheet" href="../components/nav_bar/app.css">
-    <?php include '../components/nav_bar/nav_bar.php'; ?>
+    <link rel="stylesheet" href="../../components/nav_bar/app.css">
+    <?php include '../../components/nav_bar/nav_bar.php'; ?>
 
-    <link rel="stylesheet" href="../components/error_form/app.css">
-    <?php include '../components/error_form/error_form.php' ?>
+    <link rel="stylesheet" href="../../components/error_form/app.css">
+    <?php include '../../components/error_form/error_form.php' ?>
 
-    <link rel="stylesheet" href="../components/auth_form/app.css">
-    <?php include '../components/auth_form/auth_form.php' ?>
+    <link rel="stylesheet" href="../../components/auth_form/app.css">
+    <?php include '../../components/auth_form/auth_form.php' ?>
 
 </body>
 

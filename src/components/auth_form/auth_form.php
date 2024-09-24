@@ -1,6 +1,6 @@
 <?php if ($page === 'register'): ?>
     <div class="container">
-        <form action="../../auth/scripts/register.php" method="post" class="form-example" id="form-example">
+        <form action="../../controller/ProfileController.php?action=register" method="post" class="form-example" id="form-example">
             <div>
                 <label for="name">Логин: </label>
                 <input type="text" name="username" id="username" required maxlength="20" />

@@ -65,6 +65,31 @@ class User
             return false;
         }
     }
+
+    public function create_user($username, $name, $phone, $email, $password)
+    {
+        $sql = "INSERT INTO users (username, name, phone, email, password, reg_date) VALUES (?, ?, ?, ?, ?, NOW())";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("sssss", $username, $name, $phone, $email, $password);
+        $stmt->execute();
+    }
+
+
+    public function isExists($value, $field)
+    {
+        $sql = "SELECT * FROM users WHERE $field = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $value);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $rowsCount = $result->num_rows;
+        $stmt->close();
+
+        if ($rowsCount > 0) {
+            return true;
+        }
+        return false;
+    }
 }
 
 
