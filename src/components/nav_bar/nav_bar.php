@@ -7,14 +7,14 @@
                     echo
                     "
                     <div class='button-group'>
-                        <a href='/auth/register.php' class='button'>Зарегистрироваться</a>
-                        <a href='/auth/login.php' class='button'>Войти</a>
+                        <a href='views/auth/register.php' class='button'>Зарегистрироваться</a>
+                        <a href='views/auth/login.php' class='button'>Войти</a>
                     </div>";
                 } else {
                     echo
                     "
                     <div class='button-group'>
-                        <a href='views/profile/profile.php' class='button profile-button'>Мой профиль</a>
+                        <a href='views/users/profile.php' class='button profile-button'>Мой профиль</a>
                         <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
                     </div>";
                 }

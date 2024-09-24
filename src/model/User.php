@@ -21,6 +21,18 @@ class User
         return $user;
     }
 
+    public function get_user_by_username($username)
+    {
+        $query = "SELECT * FROM users WHERE username = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        return $user;
+    }
+
     public function update_user($user_id, $updated_fields)
     {
         $sql = "UPDATE users SET ";
