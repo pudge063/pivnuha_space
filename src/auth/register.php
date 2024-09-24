@@ -10,6 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Регистрация</title>
     <link rel="stylesheet" href="app.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body>
@@ -71,6 +73,8 @@ session_start();
                 <label for="passwordConfirm">Повторите пароль</label>
                 <input type="password" name="passwordConfirm" id="passwordConfirm" required>
             </div>
+
+            <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
 
             <div>
                 <input type="submit" name="submit" value="Отправить" onclick="sound.play()" />

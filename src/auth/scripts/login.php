@@ -3,6 +3,15 @@ session_start();
 
 require_once __DIR__ . "/validator.php";
 require_once __DIR__ . "/connect.php";
+require_once __DIR__ . '/captcha.php';
+
+$is_valid = validate_capthca();
+if ($is_valid == false || !isset($is_valid)) {
+    $errors[] = 'Не пройдена капча.';
+    $_SESSION['errors'] = $errors;
+    header('Location: ../login.php');
+    exit();
+}
 
 if (!empty($_POST)) {
     $username = $_POST["username"];

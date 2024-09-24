@@ -98,10 +98,10 @@ if (!$user) {
                 <label for="password">Пароль:</label>
                 <input type="password" name="password" id="password" placeholder="Новый пароль">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="avatar">Аватар:</label>
                 <input type="file" name="avatar" id="avatar" accept="image/*">
-            </div>
+            </div> -->
             <input type="submit" value="Сохранить изменения" class="submit-button">
         </form>
     </div>
