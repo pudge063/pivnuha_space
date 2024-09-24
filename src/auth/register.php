@@ -27,6 +27,12 @@ session_start();
         </div>
     </header>
 
+    <div class="container">
+        <div class='button-group'>
+            <a href='../' class='button profile-button'>На главную</a>
+        </div>
+    </div>
+
     <div class="container" hidden="true" id="error-container">
         <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])): ?>
             <script>
