@@ -1,95 +1,40 @@
 <?php
 session_start();
+
+$page = 'register';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- DEV -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="app.css">
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="../app.css">
 
 </head>
 
 <body>
-    <header class="container">
-        <div class="header-item">
-            <img src="../assets/static/beer.png" alt="beer">
-        </div>
-        <div class="header-item">
-            <h1>Pivnuha Space</h1>
-        </div>
-        <div class="header-item">
-            <img src="../assets/static/beer.png" alt="beer">
-        </div>
-    </header>
+    <link rel="stylesheet" href="../components/header/app.css">
+    <?php include '../components/header/header.php'; ?>
 
-    <div class="container">
-        <div class='button-group'>
-            <a href='../' class='button profile-button'>На главную</a>
-        </div>
-    </div>
+    <link rel="stylesheet" href="../components/nav_bar/app.css">
+    <?php include '../components/nav_bar/nav_bar.php'; ?>
 
-    <div class="container" hidden="true" id="error-container">
-        <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])): ?>
-            <script>
-                document.getElementById('error-container').removeAttribute('hidden');
-            </script>
-            <div class="errors">
-                <ul>
-                    <?php foreach ($_SESSION['errors'] as $error): ?>
-                        <li style="text-align: center;"><?php echo $error; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <?php unset($_SESSION['errors']);
-            ?>
-        <?php endif; ?>
-    </div>
+    <link rel="stylesheet" href="../components/error_form/app.css">
+    <?php include '../components/error_form/error_form.php' ?>
 
-    <div class="container">
-        <h2>Регистрация</h2>
-
-        <form action="scripts/register.php" method="post" class="form-example" id="form-example">
-            <div>
-                <label for="name">Логин: </label>
-                <input type="text" name="username" id="username" required maxlength="20" />
-            </div>
-            <div>
-                <label for="name">Имя: </label>
-                <input type="text" name="name" id="name" required maxlength="30" />
-            </div>
-            <div>
-                <label for="phone">Телефон: </label>
-                <input type="text" name="phone" id="phone" required maxlength="12" />
-            </div>
-            <div>
-                <label for="email">Почта: </label>
-                <input type="email" name="email" id="email" required maxlength="30" />
-            </div>
-            <div>
-                <label for="password">Пароль</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-
-            <div>
-                <label for="passwordConfirm">Повторите пароль</label>
-                <input type="password" name="passwordConfirm" id="passwordConfirm" required>
-            </div>
-
-            <div class="g-recaptcha" data-sitekey="6LdV-kUqAAAAAODJHAcR6uzeS240zN3zwSNC9slo"></div>
-
-            <div>
-                <input type="submit" name="submit" value="Отправить" onclick="sound.play()" />
-            </div>
-            <div>
-                <a href="../auth/login.php">Уже есть аккаунт? Войти</a>
-            </div>
-        </form>
-    </div>
+    <link rel="stylesheet" href="../components/auth_form/app.css">
+    <?php include '../components/auth_form/auth_form.php' ?>
 
 </body>
 

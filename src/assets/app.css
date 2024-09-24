@@ -6,26 +6,6 @@ body {
     font-weight: bolder;
 }
 
-h1,
-h2 {
-    font-size: 2em;
-    color: blueviolet;
-    text-align: center;
-    margin: 10px 0;
-}
-
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 20px blueviolet;
-}
-
 .index-table {
     width: 100%;
     border-collapse: collapse;

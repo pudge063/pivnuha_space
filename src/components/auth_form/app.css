@@ -1,0 +1,66 @@
+form.form-example {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-example div {
+    margin-bottom: 15px;
+}
+
+.form-example label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: blueviolet;
+    box-shadow: 0 0 5px rgba(70, 130, 180, 0.5);
+}
+
+input[type="submit"] {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    min-height: 45px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #6a0dad;
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:disabled {
+    background-color: #b42929;
+}
+
+.captcha-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+}

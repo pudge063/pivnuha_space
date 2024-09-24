@@ -24,6 +24,8 @@ if (!$user) {
     echo "<p style='color:red;'>Пользователь не найден</p>";
     exit();
 }
+
+$page = 'user';
 ?>
 
 <!DOCTYPE html>
@@ -33,39 +35,20 @@ if (!$user) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Профиль</title>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="../app.css">
 </head>
 
 <body>
-    <header class="container header">
-        <div class="header-item">
-            <img src="../assets/static/beer.png" alt="beer">
-        </div>
-        <div class="header-item">
-            <h1>Pivnuha Space</h1>
-        </div>
-        <div class="header-item">
-            <img src="../assets/static/beer.png" alt="beer">
-        </div>
-    </header>
+    <link rel="stylesheet" href="../components/header/app.css">
+    <?php include '../components/header/header.php' ?>
 
-    <div class="container">
-        <div class="button-group">
-            <a href='../../' class='button profile-button'>На главную</a>
-        </div>
-    </div>
+    <link rel="stylesheet" href="../components/nav_bar/app.css">
+    <?php include '../components/nav_bar/nav_bar.php' ?>
 
-    <div class="container profile-container">
-        <div class="profile-avatar">
-            <img src="<?php echo htmlspecialchars($user['avatar'] ?? '../assets/static/uploads/avatar.png'); ?>" alt="Аватар" class="avatar">
-        </div>
-        <div class="profile-details">
-            <h3><?php echo htmlspecialchars($user['username']); ?></h3>
-            <p><strong>Имя:</strong> <?php echo htmlspecialchars($user['name']); ?></p>
-            <p><strong>Почта:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
-            <p><strong>Дата регистрации:</strong> <?php echo htmlspecialchars($user['reg_date']); ?></p>
-        </div>
-    </div>
+    <link rel="stylesheet" href="../components/profile_card/app.css">
+    <?php include '../components/profile_card/profile_card.php' ?>
+
+
 
     <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $user_id): ?>
         <div class="container avatar-upload">

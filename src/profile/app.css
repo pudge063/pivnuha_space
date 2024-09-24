@@ -3,29 +3,12 @@ body {
     margin: 0;
     padding: 1%;
     background-color: #e9ecef;
-    /* Мягкий серый фон */
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6f42c1;
-    /* Фон заголовка */
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.header-item img {
-    max-width: 50px;
-}
-
+/* заголовок формы */
 h1,
 h4 {
-    /* font-size: 2em; */
     color: blueviolet;
-    /* Цвет заголовков */
     text-align: center;
     margin: 10px 0;
 }
@@ -33,50 +16,13 @@ h4 {
 .container {
     max-width: 700px;
     margin: 20px auto;
-    /* Отступ сверху */
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.profile-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* Центрирование по вертикали */
-    margin-top: 20px;
-}
 
-.profile-avatar {
-    margin-right: 20px;
-}
-
-.avatar {
-    width: 120px;
-    height: 120px;
-    /* Фиксированный размер аватара */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #6f42c1;
-    /* Граница аватара */
-}
-
-.profile-details {
-    flex-grow: 1;
-}
-
-.profile-details h3 {
-    margin-bottom: 5px;
-    color: #343a40;
-    /* Цвет имени пользователя */
-}
-
-.profile-details p {
-    margin: 5px 0;
-    color: #495057;
-    /* Цвет текста */
-}
 
 .button-group {
     display: flex;
@@ -106,85 +52,3 @@ h4 {
     /* Эффект поднятия */
 }
 
-.errors {
-    color: #dc3545;
-    /* Цвет ошибок */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.errors ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.errors li {
-    margin-bottom: 5px;
-}
-
-.settings-form {
-    margin-top: 20px;
-    padding: 20px;
-    /* Отступ внутри формы */
-    background-color: #f8f9fa;
-    /* Цвет фона формы */
-    border-radius: 10px;
-    /* Скругление углов формы */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 90%;
-}
-
-.form-group h2 {
-    color: blueviolet;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #343a40;
-    /* Цвет меток */
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    /* Увеличенный отступ */
-    border: 1px solid #ced4da;
-    /* Граница полей ввода */
-    border-radius: 5px;
-    /* Скругление углов */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    /* Внутренний теневой эффект */
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-    border-color: #6f42c1;
-    /* Цвет границы при фокусе */
-    outline: none;
-    /* Убираем обводку */
-}
-
-.submit-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    /* Цвет кнопки отправки */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    /* Добавлен эффект увеличения */
-}
-
-.submit-button:hover {
-    background-color: #218838;
-    /* Темнее при наведении */
-    transform: translateY(-2px);
-    /* Эффект поднятия */
-}

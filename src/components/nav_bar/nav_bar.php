@@ -1,0 +1,36 @@
+<div class="container">
+    <div class='button-group'>
+        <?php
+        if (isset($page)) {
+            if ($page === 'index') {
+                if (!isset($_SESSION['user_id'])) {
+                    echo
+                    "
+                    <div class='button-group'>
+                        <a href='/auth/register.php' class='button'>Зарегистрироваться</a>
+                        <a href='/auth/login.php' class='button'>Войти</a>
+                    </div>";
+                } else {
+                    echo
+                    "
+                    <div class='button-group'>
+                        <a href='profile/profile.php' class='button profile-button'>Мой профиль</a>
+                        <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
+                    </div>";
+                }
+            } elseif ($page === 'register' || $page === 'login') {
+                echo "<a href='../' class='button profile-button'>На главную</a>";
+            } elseif ($page === 'profile') {
+                if (isset($_SESSION['user_id'])) {
+                    echo "
+                    <a href='/../' class='button profile-button'>Главная</a>
+                    <a href='/../auth/scripts/logout.php' class='button profile-button'>Выход</a>";
+                }
+            } elseif ($page === 'user') {
+                echo "
+                <a href='/../' class='button profile-button'>Главная</a>";
+            }
+        }
+        ?>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.errors {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.errors ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.errors li {
+    margin-bottom: 5px;
+}

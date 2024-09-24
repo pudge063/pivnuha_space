@@ -10,62 +10,34 @@ if (isset($_SESSION["user_id"])) {
     $username = $_SESSION['name'];
 }
 
-
+$page = 'index';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- DEV -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/app.css">
-    <link rel="stylesheet" href="assets/menu.css">
     <link rel="stylesheet" href="assets/new_post.css">
     <link rel="stylesheet" href="assets/posts.css">
     <title>Pivnuha Space!</title>
     <link rel="shortcut icon" href="/src/assets/static/beer.png" />
-    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
-
-    <!-- <script>
-        function onSubmit(token) {
-            document.getElementById("form-example").submit();
-        }
-    </script> -->
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-    <header class="container">
-        <div class="header-item">
-            <img src="/assets/static/beer.png" alt="beer">
-        </div>
-        <div class="header-item">
-            <h1>Pivnuha Space</h1>
-        </div>
-        <div class="header-item">
-            <img src="/assets/static/beer.png" alt="beer">
-        </div>
-    </header>
+    <link rel="stylesheet" href="components/header/app.css">
+    <?php include 'components/header/header.php'; ?>
 
-    <?php
-    if (!isset($_SESSION['user_id'])) {
-        echo
-        "<div class='container'>
-                <div class='button-group'>
-                <a href='/auth/register.php' class='button'>Зарегистрироваться</a>
-                <a href='/auth/login.php' class='button'>Войти</a>
-            </div>
-        </div>";
-    } else {
-        echo
-        "<div class='container'>
-            <div class='button-group'>
-                <a href='profile/profile.php' class='button profile-button'>Мой профиль</a>
-                <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
-            </div>
-        </div>";
-    }
-    ?>
+    <link rel="stylesheet" href="components/nav_bar/app.css">
+    <?php include 'components/nav_bar/nav_bar.php' ?>
 
 
     <div class="container">
