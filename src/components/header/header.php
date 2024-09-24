@@ -6,6 +6,6 @@
         <h1>Pivnuha Space</h1>
     </div>
     <div class="header-item">
-        <img src="../assets/static/beer.png" alt="beer">
+        <img src="/assets/static/beer.png" alt="beer">
     </div>
 </header>

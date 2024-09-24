@@ -58,6 +58,7 @@ $posts = $postController->index();
     <link rel="stylesheet" href="components/posts/app.css">
     <?php include 'components/posts/posts.php';?>
 
+    <!-- добавлено в MVC -->
     <link rel="stylesheet" href="components/beer_table/app.css">
     <?php include 'components/beer_table/beer_table.php' ?>
 

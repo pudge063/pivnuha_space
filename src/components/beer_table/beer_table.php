@@ -23,13 +23,7 @@
             echo "</tr>";
         }
         echo "</table>";
-
-
-        $result->free();
     }
-
-    $conn->close();
-
     ?>
-
+    
 </div>

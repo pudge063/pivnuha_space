@@ -4,11 +4,11 @@
         <?php while ($row = $posts->fetch_assoc()): ?>
             <div class='post-item'>
                 <div class='post-header'>
-                    <a href='profile/users.php?id=<?= $row['user_id'] ?>'>
+                    <a href='views/users/users.php?id=<?= $row['user_id'] ?>'>
                         <img src='<?= $row['avatar'] ?>' alt='Аватар' class='avatar'>
                     </a>
                     <div class='user-info'>
-                        <h3 class='username'><a href='profile/users.php?id=<?= $row['user_id'] ?>'><?= htmlspecialchars($row['name']) ?></a></h3>
+                        <h3 class='username'><a href='views/users/users.php?id=<?= $row['user_id'] ?>'><?= htmlspecialchars($row['name']) ?></a></h3>
                         <span class='post-date'><?= htmlspecialchars($row['date']) ?></span>
                     </div>
                     <?php if (isset($user_id) && $row['user_id'] == $user_id): ?>

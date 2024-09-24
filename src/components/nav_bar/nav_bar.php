@@ -14,7 +14,7 @@
                     echo
                     "
                     <div class='button-group'>
-                        <a href='profile/profile.php' class='button profile-button'>Мой профиль</a>
+                        <a href='views/profile/profile.php' class='button profile-button'>Мой профиль</a>
                         <a href='auth/scripts/logout.php' class='button profile-button'>Выход</a>
                     </div>";
                 }
@@ -23,12 +23,12 @@
             } elseif ($page === 'profile') {
                 if (isset($_SESSION['user_id'])) {
                     echo "
-                    <a href='/../' class='button profile-button'>Главная</a>
-                    <a href='/../auth/scripts/logout.php' class='button profile-button'>Выход</a>";
+                    <a href='/../../' class='button profile-button'>Главная</a>
+                    <a href='/../../auth/scripts/logout.php' class='button profile-button'>Выход</a>";
                 }
             } elseif ($page === 'user') {
                 echo "
-                <a href='/../' class='button profile-button'>Главная</a>";
+                <a href='/../../' class='button profile-button'>Главная</a>";
             }
         }
         ?>
