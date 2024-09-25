@@ -1,3 +1,12 @@
+.header-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -9,6 +18,9 @@ header {
 }
 
 .header-item img {
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     max-width: 50px;
 }
 

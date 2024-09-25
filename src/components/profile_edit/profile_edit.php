@@ -21,10 +21,8 @@
             <input type="password" name="password" id="password">
         </div>
 
-        <!-- <div class="form-group">
-                <label for="avatar">Аватар:</label>
-                <input type="file" name="avatar" id="avatar" accept="image/*">
-            </div> -->
-        <input type="submit" value="Сохранить изменения" class="submit-button">
+        <div class="btn-group">
+            <input type="submit" value="Сохранить изменения" class="submit-button">
+        </div>
     </form>
 </div>

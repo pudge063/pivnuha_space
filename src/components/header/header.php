@@ -3,14 +3,14 @@
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="preload" href="/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/views/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/components/header/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-<link rel="stylesheet" href="/app.css">
+<link rel="stylesheet" href="/views/app.css">
 <link rel="stylesheet" href="/components/header/app.css">
 
 
-<header class="container">
+<header class="header-container">
     <div class="header-item">
         <img src="/assets/static/beer.png" alt="beer">
     </div>
