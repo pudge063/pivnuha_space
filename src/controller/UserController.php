@@ -12,13 +12,11 @@ class UserController
     }
 
 
-
     public function getUser($user_id)
     {
         $result = $this->userModel->get_user($user_id);
         return $result;
     }
-
 
 
     public function loginUser($username, $password)
@@ -33,13 +31,10 @@ class UserController
             exit();
         }
 
-
-
         $user = $this->userModel->get_user_by_username($username, $password);
 
         return $user;
     }
-
 
 
     public function validate($value, $field, $user_id)
@@ -47,8 +42,6 @@ class UserController
         $result = $this->userModel->isExists($value, $field, $user_id);
         return $result;
     }
-
-
 
 
     public function registerUser($username, $name, $phone, $email, $password, $passwordConfirm)
@@ -106,18 +99,19 @@ class UserController
     }
 
 
-
-
-    public function updateUser($user_id, $fields)
+    public function updateUser($current_user, $fields)
     {
         $new_name = $fields['new_name'];
         $new_email = $fields['email'];
         $new_phone = $fields['phone'];
         $new_password = $fields['password'];
 
+        $user_id = $current_user['id'];
+
         if (!empty($new_name)) {
             $updated_fields['name'] = $new_name;
         }
+
 
         $res = $this->validate($new_email, 'email', $user_id);
 
@@ -132,24 +126,41 @@ class UserController
             }
         }
 
-        $res = $this->validate($new_phone, 'phone', $user_id);
 
-        if ($res === false) {
-            $errors[] = "Телефон уже используется другим пользователем.";
-            $_SESSION['errors'] = $errors;
-            header('Location: ../../views/users/profile.php');
-            exit();
-        } else {
-            if (!empty($new_phone)) {
+
+        if (!empty($new_phone)) {
+            if (strlen($new_phone) < 8 || strlen($new_phone) > 12 || !preg_match('/^[0-9]+$/', $new_phone)) {
+                $errors[] = "Телефон только от 8 до 12 символов. Можно использовать только цифры.";
+                // $_SESSION['errors'] = $errors;
+                // header('Location: ../views/auth/register.php');
+                // exit();
+            }
+
+
+            $res = $this->validate($new_phone, 'phone', $user_id);
+
+            if ($res === false) {
+                $errors[] = "Телефон уже используется другим пользователем.";
+                // $_SESSION['errors'] = $errors;
+                // header('Location: ../../views/users/profile.php');
+                // exit();
+            } else {
                 $updated_fields['phone'] = $new_phone;
             }
+        } else {
+            $new_phone = $current_user['phone'];
         }
+
 
         if (!empty($new_password)) {
             $updated_fields['password'] = $new_password;
         }
 
-        $this->userModel->update_user($user_id, $updated_fields);
+        if (empty($errors)) {
+            $this->userModel->update_user($user_id, $updated_fields);
+        } else {
+            $_SESSION['errors'] = $errors;
+        }
     }
 }
 
@@ -224,7 +235,7 @@ if (isset($_GET['action'])) {
 
         $userController->registerUser($username, $name, $phone, $email, $password, $passwordConfirm);
 
-        ///
+        ///// удалить потом
 
         // if ($password != $passwordConfirm) {
         //     $errors[] = 'Не совпадают пароли.';
@@ -286,10 +297,10 @@ if (isset($_GET['action'])) {
             exit();
         }
 
-        $fields['new_name'] = $new_name = isset($_POST['name']) ? trim($_POST['name']) : null;
-        $fields['email'] = $new_email = isset($_POST['email']) ? trim($_POST['email']) : null;
-        $fields['password'] = $new_password = isset($_POST['password']) ? trim($_POST['password']) : null;
-        $fields['phone'] = $new_phone = isset($_POST['phone']) ? trim($_POST['phone']) : null;
+        $fields['new_name'] = isset($_POST['name']) ? trim($_POST['name']) : null;
+        $fields['email'] = isset($_POST['email']) ? trim($_POST['email']) : null;
+        $fields['password'] = isset($_POST['password']) ? trim($_POST['password']) : null;
+        $fields['phone'] = isset($_POST['phone']) ? trim($_POST['phone']) : null;
 
 
         $user_id = $_SESSION['user_id'];
@@ -298,9 +309,9 @@ if (isset($_GET['action'])) {
 
         $current_user = $userController->getUser($user_id);
 
-        $userController->updateUser($user_id, $fields);
+        $userController->updateUser($current_user, $fields);
 
-        ///////
+        /////// удалить потом
 
         // if (!empty($new_name)) {
         //     $updated_fields['name'] = $new_name;
