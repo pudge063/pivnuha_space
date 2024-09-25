@@ -36,8 +36,9 @@ class UserController
         $this->userModel->create_user($username, $name, $phone, $email, $password);
     }
 
-    public function updateUser() {
-        
+    public function updateUser($user_id, $updated_fields)
+    {
+        $this->userModel->update_user($user_id, $updated_fields);
     }
 }
 
@@ -129,5 +130,55 @@ if (isset($_GET['action'])) {
         $userController->registerUser($username, $name, $phone, $email, $password);
 
         header('Location: ../views/auth/login.php');
+    } elseif ($action === 'edit') {
+
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: ../../views/auth/login.php");
+            exit();
+        }
+
+        $new_name = isset($_POST['name']) ? trim($_POST['name']) : null;
+        $new_email = isset($_POST['email']) ? trim($_POST['email']) : null;
+        $new_password = isset($_POST['password']) ? trim($_POST['password']) : null;
+        $new_phone = isset($_POST['phone']) ? trim($_POST['phone']) : null;
+        // $new_avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : null;
+        $new_password = isset($_POST['password']) ? $_POST['password'] : null;
+
+        $user_id = $_SESSION['user_id'];
+        $updated_fields = [];
+        $errors = [];
+
+        $current_user = $userController->getUser($user_id);
+
+        $updated_fields['name'] = $new_name;
+
+        $res = $userController->validate($new_email, 'email');
+
+        if ($res == false) {
+            $errors[] = "Email уже используется другим пользователем.";
+        } else {
+            $updated_fields['email'] = $new_email;
+        }
+
+        $res = $userController->validate($new_phone, 'phone');
+
+        if ($res == false) {
+            $errors[] = "Телефон уже используется другим пользователем.";
+        } else {
+            $updated_fields['phone'] = $new_phone;
+        }
+
+        $updated_fields['password'] = $new_password;
+
+        if (empty($errors) && !empty($updated_fields)) {
+            $userController->updateUser($user_id, $updated_fields);
+        }
+
+        if (!empty($errors)) {
+            $_SESSION['errors'] = $errors;
+        }
+
+        header('Location: ../views/users/profile.php');
+        exit();
     }
 }
