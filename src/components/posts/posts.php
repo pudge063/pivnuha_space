@@ -11,7 +11,7 @@
                         <h3 class='username'><a href='../../views/users/users.php?id=<?= $row['user_id'] ?>'><?= htmlspecialchars($row['name']) ?></a></h3>
                         <span class='post-date'><?= htmlspecialchars($row['date']) ?></span>
                     </div>
-                    <?php if (isset($user_id) && $row['user_id'] == $user_id): ?>
+                    <?php if (isset($user_id) && $row['user_id'] == $user_id || isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
                         <form action='../../controller/PostController.php?action=delete' method='POST' style='display: inline;'>
                             <input type='hidden' name='post_id' value='<?= $row['id'] ?>'>
                             <button type='submit' class='delete-button'>Удалить</button>

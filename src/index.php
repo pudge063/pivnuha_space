@@ -4,6 +4,7 @@ $page = 'index';
 
 require_once __DIR__ . '/model/Post.php';
 require_once __DIR__ . '/controller/PostController.php';
+require_once __DIR__ . '/controller/UserController.php';
 
 $public_key = getenv("CAPTCHA_PUBLIC_KEY");
 
@@ -15,6 +16,7 @@ $table_rows = $postController->read_table();
 if (isset($_SESSION["user_id"])) {
     $user_id = $_SESSION['user_id'];
     $username = $_SESSION['name'];
+    $_SESSION['is_admin'] = $userController->isAdmin($user_id);
 }
 
 $postController = new PostController($conn);
@@ -59,7 +61,7 @@ $posts = $postController->index();
 
     <!-- добавлено в MVC -->
     <link rel="stylesheet" href="components/posts/app.css">
-    <?php include 'components/posts/posts.php';?>
+    <?php include 'components/posts/posts.php'; ?>
 
     <!-- добавлено в MVC -->
     <link rel="stylesheet" href="components/beer_table/app.css">

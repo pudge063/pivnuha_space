@@ -163,6 +163,13 @@ class UserController
             $_SESSION['errors'] = $errors;
         }
     }
+
+
+    public function isAdmin($user_id)
+    {
+        $user = $this->getUser($user_id);
+        return $user['is_admin'];
+    }
 }
 
 $dbConnection = $conn;

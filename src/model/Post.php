@@ -17,27 +17,52 @@ class Post
         return $result;
     }
 
-    public function deletePost($post_id, $user_id)
+    public function readPost($post_id)
     {
-        $query = "SELECT * FROM posts WHERE id = ?";
+        $query = "SELECT posts.*, users.avatar, users.name FROM posts JOIN users ON posts.user_id = users.id WHERE posts.id = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $post_id);
         $stmt->execute();
         $result = $stmt->get_result();
+        $post = $result->fetch_assoc();
+        return $post;
+    }
 
-        if ($result->num_rows > 0) {
-            $post = $result->fetch_assoc();
+    // public function deletePost($post_id, $user_id)
+    // {
+    //     $query = "SELECT * FROM posts WHERE id = ?";
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->bind_param("i", $post_id);
+    //     $stmt->execute();
+    //     $result = $stmt->get_result();
 
-            if ($post['user_id'] == $user_id) {
-                $deleteQuery = "DELETE FROM posts WHERE id = ?";
-                $deleteStmt = $this->conn->prepare($deleteQuery);
-                $deleteStmt->bind_param("i", $post_id);
-                $deleteStmt->execute();
+    //     if ($result->num_rows > 0) {
+    //         $post = $result->fetch_assoc();
 
-                if ($deleteStmt->affected_rows > 0) {
-                    return true;
-                }
-            }
+    //         if ($post['user_id'] == $user_id) {
+    //             $deleteQuery = "DELETE FROM posts WHERE id = ?";
+    //             $deleteStmt = $this->conn->prepare($deleteQuery);
+    //             $deleteStmt->bind_param("i", $post_id);
+    //             $deleteStmt->execute();
+
+    //             if ($deleteStmt->affected_rows > 0) {
+    //                 return true;
+    //             }
+    //         }
+    //     }
+
+    //     return false;
+    // }
+
+    public function deletePost($post_id)
+    {
+        $query = "DELETE FROM posts WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('i', $post_id);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            return true;
         }
 
         return false;
