@@ -111,7 +111,7 @@ if (isset($_GET['action'])) {
         //     exit();
         // }
 
-        $existPhone = $userController->validate($phone, 'phone');
+        $existPhone = $userController->validate($phone, 'phone', $user_id);
         if ($existPhone === false) {
             $errors[] = 'Телефон уже привязан к другому аккаунту.';
             header('Location: ../views/auth/register.php');
@@ -119,7 +119,7 @@ if (isset($_GET['action'])) {
             exit();
         }
 
-        $exitstMail = $userController->validate($email, 'email');
+        $exitstMail = $userController->validate($email, 'email', $user_id);
         if ($existMail === false) {
             $errors[] = 'Почта уже привязана к другому аккаунту.';
             $_SESSION['errors'] = $errors;
