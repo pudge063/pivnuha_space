@@ -3,7 +3,7 @@
     <?php
     if (isset($table_rows)) {
         $rowsCount = $table_rows->num_rows;
-        echo "<p style='text-align: center;'>Увековечено в камне</p>";
+        echo "<p style='text-align: center;'>Увековечены в камне</p>";
         echo "<p style='text-align: center;'>Всего записей: $rowsCount</p>";
         // echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th><th>Дата</th></tr>";
         echo "<table class='index-table'><tr><th>Имя</th><th>Пиво</th></tr>";
