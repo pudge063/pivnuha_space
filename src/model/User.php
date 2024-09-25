@@ -97,8 +97,10 @@ class User
         $rowsCount = $result->num_rows;
         $stmt->close();
 
-        if ($rowsCount > 0) {
+        if ($rowsCount > 1) {
             return false;
+        } elseif ($rowsCount === 1) {
+            return 'once';
         }
         return true;
     }
