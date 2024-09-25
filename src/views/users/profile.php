@@ -5,7 +5,9 @@ $page = 'profile';
 require '../../controller/UserController.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../../auth/register.php");
+    $errors[] = 'Вы не авторизованы.';
+    $_SESSION['errors'] = $errors;
+    header("Location: ../../");
     exit();
 }
 
