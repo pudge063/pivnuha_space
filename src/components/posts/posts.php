@@ -9,7 +9,14 @@
             <div class='post-item'>
                 <div class='post-header'>
                     <a href='../../views/users/users.php?id=<?= $row['user_id'] ?>'>
-                        <img src='<?= $row['avatar'] ?>' alt='Аватар' class='avatar'>
+                        <?php
+                        if ($row['is_admin'] == 1) {
+                            $borderColor = "6f42c1";
+                        } else {
+                            $borderColor = "gray";
+                        }
+                        ?>
+                        <img src='<?= $row['avatar'] ?>' alt='Аватар' class='avatar' style="border: 2px solid <?= $borderColor; ?>;">
                     </a>
                     <div class='user-info'>
                         <h3 class='username'><a href='../../views/users/users.php?id=<?= $row['user_id'] ?>'><?= htmlspecialchars($row['name']) ?></a></h3>

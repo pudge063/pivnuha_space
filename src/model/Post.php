@@ -12,7 +12,7 @@ class Post
 
     public function readPosts()
     {
-        $query = "SELECT posts.*, users.avatar, users.name FROM posts JOIN users ON posts.user_id = users.id ORDER BY posts.date DESC";
+        $query = "SELECT posts.*, users.avatar, users.name, users.is_admin FROM posts JOIN users ON posts.user_id = users.id ORDER BY posts.date DESC";
         $result = $this->conn->query($query);
         return $result;
     }
