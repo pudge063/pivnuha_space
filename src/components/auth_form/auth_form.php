@@ -1,3 +1,7 @@
+<link rel="preload" href="/components/auth_form/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/auth_form/app.css">
+
+
 <?php if ($page === 'register'): ?>
     <div class="container">
         <form action="../../controller/UserController.php?action=register" method="post" class="form-example" id="form-example">

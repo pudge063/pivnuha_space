@@ -1,3 +1,7 @@
+<link rel="preload" href="/components/create_post/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/create_post/app.css">
+
+
 <div class="container">
     <h2>Создать пост</h2>
     <?php
@@ -9,7 +13,7 @@
     ?>
     <form action="../../controller/PostController.php?action=create" method="post" class="post-form">
         <?php
-        echo "<textarea name='post_content' id='post_content' placeholder='$placeholder' required></textarea>";
+        echo "<textarea name='post_content' id='create_post_content' placeholder='$placeholder' required></textarea>";
         ?>
         <div class="button-container">
             <?php

@@ -1,3 +1,6 @@
+<link rel="preload" href="/components/profile_edit/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/profile_edit/app.css">
+
 <div class="container settings-form">
     <h4>Редактировать профиль</h4>
     <form action="../../controller/UserController.php?action=edit" method="POST" enctype="multipart/form-data">

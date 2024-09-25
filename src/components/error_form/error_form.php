@@ -1,3 +1,6 @@
+<link rel="preload" href="/components/error_form/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/error_form/app.css">
+
 <div class="container" hidden="true" id="error-container">
     <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])): ?>
         <script>

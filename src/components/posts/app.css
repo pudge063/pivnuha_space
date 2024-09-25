@@ -1,27 +1,27 @@
 .post-item {
-    background-color: #ffffff; /* белый фон для поста */
-    border: 1px solid #e0e0e0; /* серый бордер */
-    border-radius: 8px; /* закругленные углы */
-    padding: 15px; /* внутренние отступы */
-    margin: 15px 0; /* отступы сверху и снизу */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* тень для эффекта подъема */
-    transition: box-shadow 0.3s; /* эффект при наведении */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
 }
 
 .post-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* увеличение тени при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .post-header {
     display: flex;
-    align-items: center; /* выравнивание по центру */
+    align-items: center;
 }
 
 .avatar {
-    width: 40px; /* размер аватара */
-    height: 40px; /* размер аватара */
-    border-radius: 50%; /* круглая форма */
-    margin-right: 10px; /* отступ справа */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
 
     border-radius: 50%;
     object-fit: cover;
@@ -29,28 +29,28 @@
 }
 
 .user-info {
-    flex-grow: 1; /* чтобы занять оставшееся пространство */
+    flex-grow: 1;
 }
 
 .username {
-    margin: 0; /* убрать отступы */
-    font-weight: bold; /* жирный шрифт для имени */
-    font-size: 0.9em; /* меньший размер шрифта */
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
 .username a {
-    color: #555; /* цвет текста, чтобы он не выглядел как ссылка */
-    text-decoration: none; /* убрать подчеркивание */
+    color: #555;
+    text-decoration: none;
 }
 
 .username a:hover {
-    text-decoration: none; /* убрать подчеркивание при наведении */
+    text-decoration: none;
 }
 
 
 .post-date {
-    font-size: 0.85em; /* меньший размер шрифта для даты */
-    color: #999; /* цвет текста для даты */
+    font-size: 0.85em;
+    color: #999;
 }
 
 .post-content {
@@ -58,4 +58,31 @@
     color: #555;
     font-size: 1em;
     line-height: 1.5;
+}
+
+
+.delete-button {
+    background-color: #a09494;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+.delete-button:active {
+    background-color: #cc0000;
+    transform: scale(0.98);
+}
+
+.delete-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }

@@ -34,34 +34,15 @@ $page = 'user';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Профиль</title>
-    <link rel="stylesheet" href="../../app.css">
-    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-    <link rel="stylesheet" href="../../components/header/app.css">
     <?php include '../../components/header/header.php' ?>
 
-    <link rel="stylesheet" href="../../components/nav_bar/app.css">
     <?php include '../../components/nav_bar/nav_bar.php' ?>
 
-    <link rel="stylesheet" href="../../components/profile_card/app.css">
     <?php include '../../components/profile_card/profile_card.php' ?>
 
-
-
-    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $user_id): ?>
-        <div class="container avatar-upload">
-            <h2>Загрузить аватар</h2>
-            <form action="scripts/upload_avatar.php" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="avatar">Выберите файл аватара:</label>
-                    <input type="file" name="avatar" id="avatar" accept="image/*" required>
-                </div>
-                <input type="submit" value="Загрузить" class="submit-button">
-            </form>
-        </div>
-    <?php endif; ?>
 </body>
 
 </html>

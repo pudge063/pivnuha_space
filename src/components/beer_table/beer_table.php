@@ -1,3 +1,7 @@
+<link rel="preload" href="/components/beer_table/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/beer_table/app.css">
+
+
 <div class="container">
 
     <?php
@@ -25,5 +29,5 @@
         echo "</table>";
     }
     ?>
-    
+
 </div>

@@ -1,3 +1,7 @@
+<link rel="preload" href="/components/posts/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/posts/app.css">
+
+
 <div class='container'>
     <h2>Посты</h2>
     <?php if ($posts && $posts->num_rows > 0): ?>

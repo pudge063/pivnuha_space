@@ -1,3 +1,6 @@
+<link rel="preload" href="/components/nav_bar/app.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/components/nav_bar/app.css">
+
 <div class="container">
     <div class='button-group'>
         <?php
