@@ -113,27 +113,24 @@ class UserController
         }
 
 
-        $res = $this->validate($new_email, 'email', $user_id);
+        if (!empty($new_email)) {
+            $res = $this->validate($new_email, 'email', $user_id);
 
-        if ($res == false) {
-            $errors[] = "Email уже используется другим пользователем.";
-            $_SESSION['errors'] = $errors;
-            header('Location: ../../views/users/profile.php');
-            exit();
-        } else {
-            if (!empty($new_email)) {
+            if ($res == false) {
+                $errors[] = "Email уже используется другим пользователем.";
+
+            } else {
                 $updated_fields['email'] = $new_email;
             }
-        }
+        } else {
 
+            $updated_fields['email'] = $current_user['email'];
+        }
 
 
         if (!empty($new_phone)) {
             if (strlen($new_phone) < 8 || strlen($new_phone) > 12 || !preg_match('/^[0-9]+$/', $new_phone)) {
                 $errors[] = "Телефон только от 8 до 12 символов. Можно использовать только цифры.";
-                // $_SESSION['errors'] = $errors;
-                // header('Location: ../views/auth/register.php');
-                // exit();
             }
 
 
@@ -141,9 +138,6 @@ class UserController
 
             if ($res === false) {
                 $errors[] = "Телефон уже используется другим пользователем.";
-                // $_SESSION['errors'] = $errors;
-                // header('Location: ../../views/users/profile.php');
-                // exit();
             } else {
                 $updated_fields['phone'] = $new_phone;
             }
