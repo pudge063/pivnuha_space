@@ -25,9 +25,9 @@ class UserController
         return $user;
     }
 
-    public function validate($value, $field)
+    public function validate($value, $field, $user_id)
     {
-        $result = $this->userModel->isExists($value, $field);
+        $result = $this->userModel->isExists($value, $field, $user_id);
         return $result;
     }
 
@@ -103,24 +103,24 @@ if (isset($_GET['action'])) {
             $passwordConfirm = $_POST['passwordConfirm'];
         }
 
-        $res = $userController->validate($username, 'username');
-        if ($res == 'true') {
-            $errors[] = 'Имя пользователя занято.';
-            header('Location: ../views/auth/register.php');
-            $_SESSION['errors'] = $errors;
-            exit();
-        }
+        // $existMail = $userController->validate($username, 'username');
+        // if ($existMail === false) {
+        //     $errors[] = 'Имя пользователя занято.';
+        //     header('Location: ../views/auth/register.php');
+        //     $_SESSION['errors'] = $errors;
+        //     exit();
+        // }
 
-        $res = $userController->validate($phone, 'phone');
-        if ($res === 'true') {
+        $existPhone = $userController->validate($phone, 'phone');
+        if ($existPhone === false) {
             $errors[] = 'Телефон уже привязан к другому аккаунту.';
             header('Location: ../views/auth/register.php');
             $_SESSION['errors'] = $errors;
             exit();
         }
 
-        $res = $userController->validate($email, 'email');
-        if ($res == 'true') {
+        $exitstMail = $userController->validate($email, 'email');
+        if ($existMail === false) {
             $errors[] = 'Почта уже привязана к другому аккаунту.';
             $_SESSION['errors'] = $errors;
             header('Location: ../views/auth/register.php');
@@ -130,6 +130,8 @@ if (isset($_GET['action'])) {
         $userController->registerUser($username, $name, $phone, $email, $password);
 
         header('Location: ../views/auth/login.php');
+
+
     } elseif ($action === 'edit') {
 
         if (!isset($_SESSION['user_id'])) {
@@ -152,18 +154,25 @@ if (isset($_GET['action'])) {
 
         $updated_fields['name'] = $new_name;
 
-        $res = $userController->validate($new_email, 'email');
+        $res = $userController->validate($new_email, 'email', $user_id);
 
         if ($res == false) {
             $errors[] = "Email уже используется другим пользователем.";
+            $_SESSION['errors'] = $errors;
+            header('Location: ../../views/users/profile.php');
+            exit();
         } else {
             $updated_fields['email'] = $new_email;
         }
 
-        $res = $userController->validate($new_phone, 'phone');
+        $res = $userController->validate($new_phone, 'phone', $user_id);
 
         if ($res == false) {
             $errors[] = "Телефон уже используется другим пользователем.";
+            $errors[] = "Email уже используется другим пользователем.";
+            $_SESSION['errors'] = $errors;
+            header('Location: ../../views/users/profile.php');
+            exit();
         } else {
             $updated_fields['phone'] = $new_phone;
         }

@@ -76,18 +76,29 @@ class User
     }
 
 
-    public function isExists($value, $field)
+    public function isExists($value, $field, $user_id = null)
     {
         $sql = "SELECT * FROM users WHERE $field = ?";
+
+        if ($user_id !== null) {
+            $sql .= " AND id != ?";
+        }
+
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $value);
+
+        if ($user_id !== null) {
+            $stmt->bind_param("si", $value, $user_id);
+        } else {
+            $stmt->bind_param("s", $value);
+        }
+
         $stmt->execute();
         $result = $stmt->get_result();
         $rowsCount = $result->num_rows;
         $stmt->close();
 
         if ($rowsCount > 0) {
-            return true;
+            return false;
         }
         return true;
     }
