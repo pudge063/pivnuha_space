@@ -53,7 +53,15 @@ $posts = $postController->index();
 
     <?php include 'components/error_form/error_form.php' ?>
 
-    <!-- <?php include 'components/create_post/create_post.php' ?> -->
+    <?php if (isset($user_id)) {
+        include 'components/create_post/create_post.php';
+    } ?>
+
+    <?php if (!isset($user_id)) : ?>
+        <div class="container">
+            <p style="text-align: center;">Войдите, чтобы отправить пост</p>
+        </div>
+    <?php endif ?>
 
     <?php include 'components/posts/posts.php'; ?>
 
