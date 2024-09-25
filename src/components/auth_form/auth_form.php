@@ -33,7 +33,7 @@
                 <input type="submit" name="submit" value="Отправить" onclick="sound.play()" />
             </div>
             <div>
-                <a href="../auth/login.php">Уже есть аккаунт? Войти</a>
+                <a href="../../views/auth/login.php">Уже есть аккаунт? Войти</a>
             </div>
         </form>
     </div>
@@ -58,7 +58,7 @@
                 <input type="submit" name="submit" value="Отправить" onclick="sound-error.play()" />
             </div>
             <div>
-                <a href="../auth/register.php">Уже есть аккаунт? Войти</a>
+                <a href="../../views/auth/register.php">Нет аккаунта? Зарегистрироваться</a>
             </div>
         </form>
 

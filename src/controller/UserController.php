@@ -103,6 +103,21 @@ if (isset($_GET['action'])) {
             $passwordConfirm = $_POST['passwordConfirm'];
         }
 
+        if ($password != $passwordConfirm) {
+            $errors[] = 'Не совпадают пароли.';
+            $_SESSION['errors'] = $errors;
+            header('Location: ../views/auth/register.php');
+            exit();
+        }
+
+        $existUsername = $userController->validate($username, 'username', $user_id);
+        if ($existUsername === false) {
+            $errors[] = 'Имя пользователя занято.';
+            header('Location: ../views/auth/register.php');
+            $_SESSION['errors'] = $errors;
+            exit();
+        }
+
         $existPhone = $userController->validate($phone, 'phone', $user_id);
         if ($existPhone === false) {
             $errors[] = 'Телефон уже привязан к другому аккаунту.';
