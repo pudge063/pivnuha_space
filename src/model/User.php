@@ -21,11 +21,12 @@ class User
         return $user;
     }
 
-    public function get_user_by_username($username)
+    public function get_user_by_username($identifier)
     {
-        $query = "SELECT * FROM users WHERE username = ?";
+        $query = "SELECT * FROM users WHERE username = ? OR email = ? OR phone = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('s', $username);
+        $stmt->bind_param('sss', $identifier, $identifier, $identifier);
+
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();

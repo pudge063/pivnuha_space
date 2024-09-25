@@ -14,7 +14,7 @@
                     echo
                     "
                     <div class='button-group'>
-                        <a href='views/users/profile.php' class='button profile-button'>Мой профиль</a>
+                        <a href='../../views/users/profile.php' class='button profile-button'>Мой профиль</a>
                         <a href='../../controller/UserController.php?action=logout' class='button profile-button'>Выход</a>
                     </div>";
                 }

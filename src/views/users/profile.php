@@ -2,7 +2,7 @@
 session_start();
 $page = 'profile';
 
-require '../../controller/ProfileController.php';
+require '../../controller/UserController.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../auth/register.php");
