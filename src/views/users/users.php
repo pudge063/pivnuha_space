@@ -1,10 +1,12 @@
 <?php
 session_start();
-require '../../controller/ProfileController.php';
+require '../../controller/UserController.php';
 
 $user_id = isset($_GET['id']) ? intval($_GET['id']) : null;
 if (!$user_id) {
-    echo "<p style='color:red;'>Пользователь не найден</p>";
+    $errors[] = 'Пользователь не найден.';
+    $_SESSION['errors'] = $errors;
+    header('Location: ../../');
     exit();
 }
 
@@ -16,7 +18,9 @@ if (isset($_SESSION['user_id']) && $user_id == $_SESSION['user_id']) {
 $user = $userController->getUser($user_id);
 
 if (!$user) {
-    echo "<p style='color:red;'>Пользователь не найден</p>";
+    $errors[] = 'Пользователь не найден.';
+    $_SESSION['errors'] = $errors;
+    header('Location: ../../');
     exit();
 }
 

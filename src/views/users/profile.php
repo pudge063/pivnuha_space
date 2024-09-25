@@ -14,7 +14,10 @@ $user_id = $_SESSION['user_id'];
 $user = $userController->getUser($user_id);
 
 if (!$user) {
-    echo "<p style='color:red;'>Пользователь не найден</p>";
+    $errors[] = "Пользователь не найден.";
+    $_SESSION['errors'] = $errors;
+
+    header("Location: ../../");
     exit();
 }
 

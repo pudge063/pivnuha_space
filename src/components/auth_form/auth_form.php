@@ -1,6 +1,6 @@
 <?php if ($page === 'register'): ?>
     <div class="container">
-        <form action="../../controller/ProfileController.php?action=register" method="post" class="form-example" id="form-example">
+        <form action="../../controller/UserController.php?action=register" method="post" class="form-example" id="form-example">
             <div>
                 <label for="name">Логин: </label>
                 <input type="text" name="username" id="username" required maxlength="20" />
@@ -41,7 +41,7 @@
     <div class="container">
         <h2>Вход</h2>
 
-        <form action="../../controller/ProfileController.php?action=login" method="post" class="form-example" id="form-example">
+        <form action="../../controller/UserController.php?action=login" method="post" class="form-example" id="form-example">
             <div>
                 <label for="name">Логин: </label>
                 <input type="text" name="username" id="username" required maxlength="20" />

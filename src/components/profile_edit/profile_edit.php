@@ -1,6 +1,6 @@
 <div class="container settings-form">
     <h4>Редактировать профиль</h4>
-    <form action="../../controller/ProfileController.php?action=edit" method="POST" enctype="multipart/form-data">
+    <form action="../../controller/UserController.php?action=edit" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Имя:</label>
             <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>">

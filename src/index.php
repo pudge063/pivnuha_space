@@ -50,6 +50,9 @@ $posts = $postController->index();
         <p style="text-align: center; margin: 0; padding: 0;">Однажды pivnuha.space будет по умолчанию в закладках Chrome</p>
     </div>
 
+    <link rel="stylesheet" href="components/error_form/app.css">
+    <?php include 'components/error_form/error_form.php' ?>
+
     <!-- добавлено в MVC -->
     <link rel="stylesheet" href="components/create_post/app.css">
     <?php include 'components/create_post/create_post.php' ?>
