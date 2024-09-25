@@ -110,6 +110,20 @@ if (isset($_GET['action'])) {
             exit();
         }
 
+        if (strlen($username) < 4 || strlen($username) > 15 || !preg_match('/^[a-zA-Z]+$/', $username)) {
+            $errors[] = "Логин только от 4 до 15 символов. Можно использовать только латиницу.";
+            $_SESSION['errors'] = $errors;
+            header('Location: ../views/auth/register.php');
+            exit();
+        }
+
+        if (strlen($phone) < 8 || strlen($phone) > 12 || !preg_match('/^[0-9]+$/', $phone)) {
+            $errors[] = "Телефон только от 8 до 12 символов. Можно использовать только цифры.";
+            $_SESSION['errors'] = $errors;
+            header('Location: ../views/auth/register.php');
+            exit();
+        }
+
         $existUsername = $userController->validate($username, 'username', $user_id);
         if ($existUsername === false) {
             $errors[] = 'Имя пользователя занято.';
