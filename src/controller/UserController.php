@@ -51,51 +51,59 @@ class UserController
 
         if ($password != $passwordConfirm) {
             $errors[] = 'Не совпадают пароли.';
-            $_SESSION['errors'] = $errors;
-            header('Location: ../views/auth/register.php');
-            exit();
+            // $_SESSION['errors'] = $errors;
+            // header('Location: ../views/auth/register.php');
+            // exit();
         }
 
         if (strlen($username) < 4 || strlen($username) > 15 || !preg_match('/^[a-zA-Z]+$/', $username)) {
             $errors[] = "Логин только от 4 до 15 символов. Можно использовать только латиницу.";
-            $_SESSION['errors'] = $errors;
-            header('Location: ../views/auth/register.php');
-            exit();
+            // $_SESSION['errors'] = $errors;
+            // header('Location: ../views/auth/register.php');
+            // exit();
         }
 
         if (strlen($phone) < 8 || strlen($phone) > 12 || !preg_match('/^[0-9]+$/', $phone)) {
             $errors[] = "Телефон только от 8 до 12 символов. Можно использовать только цифры.";
-            $_SESSION['errors'] = $errors;
-            header('Location: ../views/auth/register.php');
-            exit();
+            // $_SESSION['errors'] = $errors;
+            // header('Location: ../views/auth/register.php');
+            // exit();
         }
 
         $existUsername = $this->validate($username, 'username', $user_id);
-        if ($existUsername === false) {
+        if ($existUsername === 'once') {
             $errors[] = 'Имя пользователя занято.';
-            header('Location: ../views/auth/register.php');
-            $_SESSION['errors'] = $errors;
-            exit();
+            // header('Location: ../views/auth/register.php');
+            // $_SESSION['errors'] = $errors;
+            // exit();
         }
 
 
         $existPhone = $this->validate($phone, 'phone', $user_id);
-        if ($existPhone === false) {
+        if ($existPhone === 'once') {
             $errors[] = 'Телефон уже привязан к другому аккаунту.';
-            header('Location: ../views/auth/register.php');
-            $_SESSION['errors'] = $errors;
-            exit();
+            // header('Location: ../views/auth/register.php');
+            // $_SESSION['errors'] = $errors;
+            // exit();
         }
 
         $existMail = $this->validate($email, 'email', $user_id);
-        if (isset($existMail) && $existMail === false) {
+        if (isset($existMail) && $existMail === 'once') {
             $errors[] = 'Почта уже привязана к другому аккаунту.';
+            // $_SESSION['errors'] = $errors;
+            // header('Location: ../views/auth/register.php');
+            // exit();
+        }
+
+        if (empty($errors)) {
+            $this->userModel->create_user($username, $name, $phone, $email, $password);
+            header('Location: ../views/auth/login.php');
+            exit();
+        } else {
             $_SESSION['errors'] = $errors;
             header('Location: ../views/auth/register.php');
             exit();
         }
-
-        $this->userModel->create_user($username, $name, $phone, $email, $password);
     }
 
 
@@ -118,7 +126,6 @@ class UserController
 
             if ($res == false) {
                 $errors[] = "Email уже используется другим пользователем.";
-
             } else {
                 $updated_fields['email'] = $new_email;
             }
@@ -226,59 +233,9 @@ if (isset($_GET['action'])) {
             $passwordConfirm = $_POST['passwordConfirm'];
         }
 
-
         $userController->registerUser($username, $name, $phone, $email, $password, $passwordConfirm);
 
-        ///// удалить потом
-
-        // if ($password != $passwordConfirm) {
-        //     $errors[] = 'Не совпадают пароли.';
-        //     $_SESSION['errors'] = $errors;
-        //     header('Location: ../views/auth/register.php');
-        //     exit();
-        // }
-
-        // if (strlen($username) < 4 || strlen($username) > 15 || !preg_match('/^[a-zA-Z]+$/', $username)) {
-        //     $errors[] = "Логин только от 4 до 15 символов. Можно использовать только латиницу.";
-        //     $_SESSION['errors'] = $errors;
-        //     header('Location: ../views/auth/register.php');
-        //     exit();
-        // }
-
-        // if (strlen($phone) < 8 || strlen($phone) > 12 || !preg_match('/^[0-9]+$/', $phone)) {
-        //     $errors[] = "Телефон только от 8 до 12 символов. Можно использовать только цифры.";
-        //     $_SESSION['errors'] = $errors;
-        //     header('Location: ../views/auth/register.php');
-        //     exit();
-        // }
-
-        // $existUsername = $userController->validate($username, 'username', $user_id);
-        // if ($existUsername === false) {
-        //     $errors[] = 'Имя пользователя занято.';
-        //     header('Location: ../views/auth/register.php');
-        //     $_SESSION['errors'] = $errors;
-        //     exit();
-        // }
-
-        // $existPhone = $userController->validate($phone, 'phone', $user_id);
-        // if ($existPhone === false) {
-        //     $errors[] = 'Телефон уже привязан к другому аккаунту.';
-        //     header('Location: ../views/auth/register.php');
-        //     $_SESSION['errors'] = $errors;
-        //     exit();
-        // }
-
-        // $exitstMail = $userController->validate($email, 'email', $user_id);
-        // if (isset($existMail) && $existMail === false) {
-        //     $errors[] = 'Почта уже привязана к другому аккаунту.';
-        //     $_SESSION['errors'] = $errors;
-        //     header('Location: ../views/auth/register.php');
-        //     exit();
-        // }
-
-        // $userController->registerUser($username, $name, $phone, $email, $password, $passwordConfirm);
-
-        header('Location: ../views/auth/login.php');
+        // header('Location: ../views/auth/login.php');
     }
 
 
