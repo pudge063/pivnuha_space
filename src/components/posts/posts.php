@@ -11,7 +11,7 @@
                     <a href='../../views/users/users.php?id=<?= $row['user_id'] ?>'>
                         <?php
                         if ($row['is_admin'] == 1) {
-                            $borderColor = "6f42c1";
+                            $borderColor = "#6f42c1";
                         } else {
                             $borderColor = "gray";
                         }
